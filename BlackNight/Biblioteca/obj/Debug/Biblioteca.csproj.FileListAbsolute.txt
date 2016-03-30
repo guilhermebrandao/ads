@@ -1,0 +1,13 @@
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\Biblioteca\bin\Debug\Biblioteca.dll
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\Biblioteca\bin\Debug\Biblioteca.pdb
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\Biblioteca\obj\Debug\Biblioteca.dll
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\guilh\Desktop\Repo\BlackNight\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\guilh\Desktop\Repo\BlackNight\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\guilh\Desktop\Repo\BlackNight\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\guilh\Desktop\Repo\BlackNight\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache

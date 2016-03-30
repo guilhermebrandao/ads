@@ -1,0 +1,24 @@
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\WcfBlackNight\bin\WcfBlackNight.dll.config
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\WcfBlackNight\bin\WcfBlackNight.dll
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\WcfBlackNight\bin\WcfBlackNight.pdb
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\WcfBlackNight\bin\Biblioteca.dll
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\WcfBlackNight\bin\Biblioteca.pdb
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.csprojResolveAssemblyReference.cache
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.dll
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\WcfBlackNight\bin\WcfBlackNight.dll.config
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\WcfBlackNight\bin\WcfBlackNight.dll
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\WcfBlackNight\bin\WcfBlackNight.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\WcfBlackNight\bin\Biblioteca.dll
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\WcfBlackNight\bin\Biblioteca.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.csprojResolveAssemblyReference.cache
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.dll
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.pdb
+C:\Users\guilh\Desktop\Repo\BlackNight\WcfBlackNight\bin\WcfBlackNight.dll.config
+C:\Users\guilh\Desktop\Repo\BlackNight\WcfBlackNight\bin\WcfBlackNight.dll
+C:\Users\guilh\Desktop\Repo\BlackNight\WcfBlackNight\bin\WcfBlackNight.pdb
+C:\Users\guilh\Desktop\Repo\BlackNight\WcfBlackNight\bin\Biblioteca.dll
+C:\Users\guilh\Desktop\Repo\BlackNight\WcfBlackNight\bin\Biblioteca.pdb
+C:\Users\guilh\Desktop\Repo\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.csprojResolveAssemblyReference.cache
+C:\Users\guilh\Desktop\Repo\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.dll
+C:\Users\guilh\Desktop\Repo\BlackNight\WcfBlackNight\obj\Debug\WcfBlackNight.pdb

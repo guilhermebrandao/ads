@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Venda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CdCliente" nillable="true" type="tns:Cliente" />
+      <xs:element minOccurs="0" name="CdEvento" nillable="true" type="tns:Evento" />
+      <xs:element minOccurs="0" name="CdVenda" type="xs:int" />
+      <xs:element minOccurs="0" name="DtVenda" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Venda" nillable="true" type="tns:Venda" />
+  <xs:complexType name="Cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CdCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="CpfCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DtNascCliente" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmailCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NmCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SxCliente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="Evento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CdAtracao" nillable="true" type="tns:Atracao" />
+      <xs:element minOccurs="0" name="CdEvento" type="xs:int" />
+      <xs:element minOccurs="0" name="DtEvento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NmEvento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QtdIngFem" type="xs:int" />
+      <xs:element minOccurs="0" name="QtdIngMasc" type="xs:int" />
+      <xs:element minOccurs="0" name="VlIngFem" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VlIngMasc" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Evento" nillable="true" type="tns:Evento" />
+  <xs:complexType name="Atracao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CdAtracao" type="xs:int" />
+      <xs:element minOccurs="0" name="NmAtracao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumAtracao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Atracao" nillable="true" type="tns:Atracao" />
+  <xs:complexType name="ArrayOfVenda">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Venda" nillable="true" type="tns:Venda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenda" nillable="true" type="tns:ArrayOfVenda" />
+  <xs:complexType name="ArrayOfCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente" nillable="true" type="tns:Cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCliente" nillable="true" type="tns:ArrayOfCliente" />
+  <xs:complexType name="ArrayOfEvento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Evento" nillable="true" type="tns:Evento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEvento" nillable="true" type="tns:ArrayOfEvento" />
+  <xs:complexType name="FormaPagto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CdFormaPagto" type="xs:int" />
+      <xs:element minOccurs="0" name="DescFormaPagto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormaPagto" nillable="true" type="tns:FormaPagto" />
+  <xs:complexType name="ArrayOfFormaPagto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormaPagto" nillable="true" type="tns:FormaPagto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormaPagto" nillable="true" type="tns:ArrayOfFormaPagto" />
+  <xs:complexType name="FormaPagtoVenda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CdEvento" nillable="true" type="tns:Evento" />
+      <xs:element minOccurs="0" name="CdFormaPagto" nillable="true" type="tns:FormaPagto" />
+      <xs:element minOccurs="0" name="VlPago" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormaPagtoVenda" nillable="true" type="tns:FormaPagtoVenda" />
+  <xs:complexType name="ArrayOfFormaPagtoVenda">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormaPagtoVenda" nillable="true" type="tns:FormaPagtoVenda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormaPagtoVenda" nillable="true" type="tns:ArrayOfFormaPagtoVenda" />
+  <xs:complexType name="ArrayOfAtracao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Atracao" nillable="true" type="tns:Atracao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAtracao" nillable="true" type="tns:ArrayOfAtracao" />
+  <xs:complexType name="RitmoEvento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CdEvento" nillable="true" type="tns:Evento" />
+      <xs:element minOccurs="0" name="CdRitmo" nillable="true" type="tns:Ritmo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RitmoEvento" nillable="true" type="tns:RitmoEvento" />
+  <xs:complexType name="Ritmo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CdRitmo" type="xs:int" />
+      <xs:element minOccurs="0" name="NmRitmo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ritmo" nillable="true" type="tns:Ritmo" />
+  <xs:complexType name="ArrayOfRitmo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ritmo" nillable="true" type="tns:Ritmo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRitmo" nillable="true" type="tns:ArrayOfRitmo" />
+</xs:schema>

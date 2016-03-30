@@ -1,0 +1,50 @@
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\BlackNight\bin\Debug\BlackNight.exe.config
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\BlackNight\bin\Debug\BlackNight.exe
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\BlackNight\bin\Debug\BlackNight.pdb
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.Properties.Resources.resources
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.csproj.GenerateResource.Cache
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.exe
+c:\users\guilh\documents\visual studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.pdb
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.guiIncial.resources
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.guiCompra.resources
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.GuiCadastroCliente.resources
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.GuiRealizaCompra.resources
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.guiConfirma.resources
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.GuiGerencia.resources
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.GuiServerSocket.resources
+C:\Users\guilh\Documents\Visual Studio 2015\Projects\BlackNight\BlackNight\obj\Debug\BlackNight.csprojResolveAssemblyReference.cache
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\bin\Debug\BlackNight.exe.config
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.exe
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\bin\Debug\BlackNight.exe
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\bin\Debug\BlackNight.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiCadastroCliente.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.guiCompra.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.guiConfirma.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiGerencia.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.guiIncial.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiRealizaCompra.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiServerSocket.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.Properties.Resources.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.csproj.GenerateResource.Cache
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiCadastroAtração.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiCadastraRitmo.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\bin\Debug\BlackNight.exe.config
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\bin\Debug\BlackNight.exe
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\bin\Debug\BlackNight.pdb
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.csprojResolveAssemblyReference.cache
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiCadastraRitmo.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiCadastroAtração.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiCadastroCliente.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.guiCompra.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.guiConfirma.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiGerencia.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.guiIncial.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiRealizaCompra.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiServerSocket.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.Properties.Resources.resources
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.csproj.GenerateResource.Cache
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.exe
+C:\Users\guilh\Desktop\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.pdb
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.GuiCadastraEvento.resources
+C:\Users\derick.irineu\Desktop\Guilherme Brandão\Repo\BlackNight\BlackNight\obj\Debug\BlackNight.csprojResolveAssemblyReference.cache

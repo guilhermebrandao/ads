@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2622/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2622/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2622/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_NovaVenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaVenda" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovaVenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarVendas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarVendas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarVendas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarVendasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ProcurarId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcurarId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ProcurarId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcurarIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarVenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarVenda" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarVenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarClientes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovoEvento_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovoEvento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovoEvento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovoEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarEventos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEventos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarEventos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEventosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirEvento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirEvento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirEvento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarEvento_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarEvento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarEvento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarPreco_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarPreco" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarPreco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarPrecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarHoraDoEvento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarHoraDoEvento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarHoraDoEvento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarHoraDoEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovaFormaPagto_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaFormaPagto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovaFormaPagto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaFormaPagtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarFormaPagto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormaPagto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarFormaPagto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormaPagtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarFormaPagtoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarFormaPagtoID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarFormaPagtoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarFormaPagtoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarFormaPagto_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarFormaPagto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarFormaPagto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarFormaPagtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovaFormaPagtoVenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaFormaPagtoVenda" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovaFormaPagtoVenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaFormaPagtoVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarFormaPagtoVenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormaPagtoVenda" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarFormaPagtoVenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormaPagtoVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarFormaPagtoVenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarFormaPagtoVenda" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarFormaPagtoVenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarFormaPagtoVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovaAtracao_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaAtracao" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovaAtracao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaAtracaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarAtracao_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarAtracao" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarAtracao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarAtracaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarAtracoes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAtracoes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarAtracoes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAtracoesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovoRitmoEvento_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovoRitmoEvento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovoRitmoEvento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovoRitmoEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarRitmoEvento_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarRitmoEvento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarRitmoEvento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarRitmoEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovoRitmo_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovoRitmo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NovoRitmo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovoRitmoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarRitmo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarRitmo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisarRitmo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarRitmoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarRitmos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRitmos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarRitmos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRitmosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirRitmo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirRitmo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirRitmo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirRitmoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="NovaVenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NovaVenda" message="tns:IService1_NovaVenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NovaVendaResponse" message="tns:IService1_NovaVenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarVendas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarVendas" message="tns:IService1_ListarVendas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarVendasResponse" message="tns:IService1_ListarVendas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcurarId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ProcurarId" message="tns:IService1_ProcurarId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ProcurarIdResponse" message="tns:IService1_ProcurarId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarVenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarVenda" message="tns:IService1_PesquisarVenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarVendaResponse" message="tns:IService1_PesquisarVenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NovoCliente" message="tns:IService1_NovoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NovoClienteResponse" message="tns:IService1_NovoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarCliente" message="tns:IService1_PesquisarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarClienteResponse" message="tns:IService1_PesquisarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarClientes" message="tns:IService1_ListarClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarClientesResponse" message="tns:IService1_ListarClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirCliente" message="tns:IService1_ExcluirCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirClienteResponse" message="tns:IService1_ExcluirCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovoEvento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NovoEvento" message="tns:IService1_NovoEvento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NovoEventoResponse" message="tns:IService1_NovoEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEventos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarEventos" message="tns:IService1_ListarEventos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarEventosResponse" message="tns:IService1_ListarEventos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirEvento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirEvento" message="tns:IService1_ExcluirEvento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirEventoResponse" message="tns:IService1_ExcluirEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarEvento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarEvento" message="tns:IService1_PesquisarEvento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarEventoResponse" message="tns:IService1_PesquisarEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarPreco">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarPreco" message="tns:IService1_PesquisarPreco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarPrecoResponse" message="tns:IService1_PesquisarPreco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarHoraDoEvento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarHoraDoEvento" message="tns:IService1_ListarHoraDoEvento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarHoraDoEventoResponse" message="tns:IService1_ListarHoraDoEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaFormaPagto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NovaFormaPagto" message="tns:IService1_NovaFormaPagto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NovaFormaPagtoResponse" message="tns:IService1_NovaFormaPagto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormaPagto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarFormaPagto" message="tns:IService1_ListarFormaPagto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarFormaPagtoResponse" message="tns:IService1_ListarFormaPagto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarFormaPagtoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarFormaPagtoID" message="tns:IService1_PesquisarFormaPagtoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarFormaPagtoIDResponse" message="tns:IService1_PesquisarFormaPagtoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarFormaPagto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarFormaPagto" message="tns:IService1_PesquisarFormaPagto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarFormaPagtoResponse" message="tns:IService1_PesquisarFormaPagto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaFormaPagtoVenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NovaFormaPagtoVenda" message="tns:IService1_NovaFormaPagtoVenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NovaFormaPagtoVendaResponse" message="tns:IService1_NovaFormaPagtoVenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormaPagtoVenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarFormaPagtoVenda" message="tns:IService1_ListarFormaPagtoVenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarFormaPagtoVendaResponse" message="tns:IService1_ListarFormaPagtoVenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarFormaPagtoVenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarFormaPagtoVenda" message="tns:IService1_PesquisarFormaPagtoVenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarFormaPagtoVendaResponse" message="tns:IService1_PesquisarFormaPagtoVenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaAtracao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NovaAtracao" message="tns:IService1_NovaAtracao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NovaAtracaoResponse" message="tns:IService1_NovaAtracao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarAtracao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarAtracao" message="tns:IService1_PesquisarAtracao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarAtracaoResponse" message="tns:IService1_PesquisarAtracao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAtracoes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarAtracoes" message="tns:IService1_ListarAtracoes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarAtracoesResponse" message="tns:IService1_ListarAtracoes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovoRitmoEvento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NovoRitmoEvento" message="tns:IService1_NovoRitmoEvento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NovoRitmoEventoResponse" message="tns:IService1_NovoRitmoEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarRitmoEvento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarRitmoEvento" message="tns:IService1_PesquisarRitmoEvento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarRitmoEventoResponse" message="tns:IService1_PesquisarRitmoEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovoRitmo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NovoRitmo" message="tns:IService1_NovoRitmo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NovoRitmoResponse" message="tns:IService1_NovoRitmo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarRitmo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarRitmo" message="tns:IService1_PesquisarRitmo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarRitmoResponse" message="tns:IService1_PesquisarRitmo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarRitmos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarRitmos" message="tns:IService1_ListarRitmos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarRitmosResponse" message="tns:IService1_ListarRitmos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirRitmo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirRitmo" message="tns:IService1_ExcluirRitmo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirRitmoResponse" message="tns:IService1_ExcluirRitmo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NovaVenda">
+      <soap:operation soapAction="http://tempuri.org/IService1/NovaVenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarVendas">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarVendas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcurarId">
+      <soap:operation soapAction="http://tempuri.org/IService1/ProcurarId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarVenda">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarVenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovoCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/NovoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovoEvento">
+      <soap:operation soapAction="http://tempuri.org/IService1/NovoEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEventos">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarEventos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirEvento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarEvento">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarPreco">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarPreco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarHoraDoEvento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarHoraDoEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaFormaPagto">
+      <soap:operation soapAction="http://tempuri.org/IService1/NovaFormaPagto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormaPagto">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarFormaPagto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarFormaPagtoID">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarFormaPagtoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarFormaPagto">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarFormaPagto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaFormaPagtoVenda">
+      <soap:operation soapAction="http://tempuri.org/IService1/NovaFormaPagtoVenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormaPagtoVenda">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarFormaPagtoVenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarFormaPagtoVenda">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarFormaPagtoVenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaAtracao">
+      <soap:operation soapAction="http://tempuri.org/IService1/NovaAtracao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarAtracao">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarAtracao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAtracoes">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarAtracoes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovoRitmoEvento">
+      <soap:operation soapAction="http://tempuri.org/IService1/NovoRitmoEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarRitmoEvento">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarRitmoEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovoRitmo">
+      <soap:operation soapAction="http://tempuri.org/IService1/NovoRitmo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarRitmo">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisarRitmo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRitmos">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarRitmos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirRitmo">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirRitmo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:2622/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
