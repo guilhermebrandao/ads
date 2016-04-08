@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +26,7 @@ public class Produto {
 	@ManyToOne
 	private Carrinho carrinho;
 	
-	@OneToMany
+	@ManyToOne
 	private Fornecedor fornecedor;
 	
 	@Column(nullable = false, length=300)
@@ -41,6 +40,9 @@ public class Produto {
 	
 	@Column(nullable=false)
 	private String codigoDeBarra;
+	
+	@ManyToOne
+	private ItemCarrinho itemCarrinho;
 
 	/**
 	 * @return the id
@@ -173,5 +175,19 @@ public class Produto {
 	 */
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+
+	/**
+	 * @return the itemCarrinho
+	 */
+	public ItemCarrinho getItemCarrinho() {
+		return itemCarrinho;
+	}
+
+	/**
+	 * @param itemCarrinho the itemCarrinho to set
+	 */
+	public void setItemCarrinho(ItemCarrinho itemCarrinho) {
+		this.itemCarrinho = itemCarrinho;
 	}
 }

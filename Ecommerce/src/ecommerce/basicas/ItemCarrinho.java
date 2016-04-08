@@ -1,6 +1,7 @@
 package ecommerce.basicas;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,13 +25,16 @@ public class ItemCarrinho {
 	private String nome;
 	
 	@OneToMany(mappedBy = "itemCarrinho", targetEntity = Produto.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private Produto produto;
+	private List<Produto> produto;
 	
 	@Column(nullable=false)
 	private Integer quantidade;
 	
 	@Column(precision=10, scale =2)
 	private BigDecimal precoUnitario;
+	
+	@ManyToOne
+	private Carrinho carrinho;
 	
 	/**
 	 * @return the id
@@ -58,13 +63,13 @@ public class ItemCarrinho {
 	/**
 	 * @return the produto
 	 */
-	public Produto getProduto() {
+	public List<Produto> getProduto() {
 		return produto;
 	}
 	/**
 	 * @param produto the produto to set
 	 */
-	public void setProduto(Produto produto) {
+	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
 	/**
@@ -90,5 +95,17 @@ public class ItemCarrinho {
 	 */
 	public void setPrecoUnitario(BigDecimal precoUnitario) {
 		this.precoUnitario = precoUnitario;
+	}
+	/**
+	 * @return the carrinho
+	 */
+	public Carrinho getCarrinho() {
+		return carrinho;
+	}
+	/**
+	 * @param carrinho the carrinho to set
+	 */
+	public void setCarrinho(Carrinho carrinho) {
+		this.carrinho = carrinho;
 	}
 }

@@ -30,7 +30,7 @@ public class Carrinho {
 	private Calendar dataAdicionado;
 	
 	@OneToMany(mappedBy = "carrinho", targetEntity = ItemCarrinho.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<ItemCarrinho> itemCarrinhos;
+	private List<ItemCarrinho> itemCarrinho;
 
 	/**
 	 * @return the id
@@ -96,7 +96,7 @@ public class Carrinho {
 	 * @return the itemCarrinho
 	 */
 	public List<ItemCarrinho> getItemCarrinho() {
-		return itemCarrinhos;
+		return itemCarrinho;
 	}
 
 	/**
@@ -104,6 +104,6 @@ public class Carrinho {
 	 *            the itemCarrinho to set
 	 */
 	public void setItemCarrinho(List<ItemCarrinho> itemCarrinho) {
-		this.itemCarrinhos = itemCarrinho;
+		this.itemCarrinho = itemCarrinho;
 	}
 }

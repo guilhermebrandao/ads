@@ -1,6 +1,7 @@
 package ecommerce.basicas;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,11 +27,11 @@ public class Pedido {
 	@Column(nullable=false)
 	private Calendar dataPedido;
 	
-	@Column(nullable=false, length=10, columnDefinition="À Pagar")
+	@Column(nullable=false, length=10, columnDefinition="A Pagar")
 	private String status;
 	
-	@OneToMany(mappedBy = "pedidos", targetEntity = Pagamento.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private Pagamento pagamento;
+	@OneToMany(mappedBy = "pedido", targetEntity = Pagamento.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Pagamento> pagamento;
 
 	/**
 	 * @return the id
@@ -95,7 +96,7 @@ public class Pedido {
 	/**
 	 * @return the pagamento
 	 */
-	public Pagamento getPagamento() {
+	public List<Pagamento> getPagamento() {
 		return pagamento;
 	}
 
@@ -103,7 +104,7 @@ public class Pedido {
 	 * @param pagamento
 	 *            the pagamento to set
 	 */
-	public void setPagamento(Pagamento pagamento) {
+	public void setPagamento(List<Pagamento> pagamento) {
 		this.pagamento = pagamento;
 	}
 }
