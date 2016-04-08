@@ -10,3 +10,12 @@ Deadlines:
  2º - Camadas de Dados e Negocio (28/04/2016)
  3º - Protótipo GUI (05/04/2016)
  4º - Entrega Final (02/06/2016 e 03/06/2016)
+
+ 
+ MySQL:
+ #Rodar linha por linha;
+ 
+CREATE USER 'usrEcommerce'@'%' IDENTIFIED BY 'usr123'
+GRANT ALL PRIVILEGES ON *.* TO 'usrEcommerce'@'%';
+
+CREATE DATABASE ecommerce;
