@@ -12,7 +12,7 @@ public class DAOCliente extends DAOUsuario<Cliente> implements IDAOCliente {
 	}
 
 	@Override
-	public final Cliente pesquisarPorNome(String nome) {
+	public final Cliente pesquisarPorEmail(String nome) {
 		Cliente instance = null;
 		try {
 			instance = (Cliente) getEntityManager().find(classePersistente, nome);

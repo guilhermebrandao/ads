@@ -27,7 +27,7 @@ public class RNCliente implements IRNCliente {
 
 	@Override
 	public boolean verificaExistencia(Cliente cliente) {
-		if (dao.pesquisarPorNome(cliente.getNome()) == null) {
+		if (dao.pesquisarPorEmail(cliente.getEmail()) == null) {
 			return true;
 		}
 		return false;
@@ -43,7 +43,9 @@ public class RNCliente implements IRNCliente {
 			return true;
 		} else if (cliente.getSenha() != null) {
 			return true;
-		} else if (cliente.getTipoUsuario() != null) {
+		} else if (cliente.getEmail() != null){
+			return true;
+		} else if (cliente.getNome() != null){
 			return true;
 		} else {
 			return false;

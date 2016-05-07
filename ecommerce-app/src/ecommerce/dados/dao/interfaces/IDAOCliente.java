@@ -4,5 +4,5 @@ import ecommerce.basicas.Cliente;
 
 public interface IDAOCliente extends IDAOUsuario<Cliente> {
 	
-	public Cliente pesquisarPorNome(String nome);
+	public Cliente pesquisarPorEmail(String nome);
 }

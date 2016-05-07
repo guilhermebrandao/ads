@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<title>Ecommerce do Poder</title>
+	<meta name="author"
+		content="Antônio Neto, Derick Irineu, Guilherme Brandão"></meta>
+</h:head>
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+	<b:navBar brand="Ecommerce do Poder" brandhref="default.xhtml"
+		inverse="true" fixed="top">
+		<b:navbarLinks>
+			<b:navLink value="Atendimento" href="#"></b:navLink>
+			<b:navLink value="Meus Pedidos" href="#"></b:navLink>
+			<b:navLink value="Login | Cadastrar" href="#"></b:navLink>
+			<b:dropMenu value="Meu Perfil">
+				<b:navLink value="Configuração" href="#"></b:navLink>
+				<b:navLink value="Certificados" href="#"></b:navLink>
+				<b:navLink></b:navLink>
+				<b:navLink header="Cursos finalizados"></b:navLink>
+
+			</b:dropMenu>
+		</b:navbarLinks>
+	</b:navBar>
+
+	<h:form styleClass="navbar-form navbar-left">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 class="text-left text-info">
+					Já tem cadastro?<br /> Então digite seu login e senha. <br />
+				</h3>
+				<div class="col-md-6">
+					Login: <br />
+					<b:inputText placeholder="Login" fieldSize="sm" />
+				</div>
+				<div class="col-md-6">
+					Senha: <br />
+					<b:inputText placeholder="Senha" fieldSize="sm" />
+				</div>
+
+				<b:commandButton value="Logar" look="sucess" icon="chevron-right"
+					iconAlign="right"></b:commandButton>
+			</div>
+		</div>
+	</h:form>
+
+	<h:form styleClass="navbar-form navbar-right">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 class="text-left text-info">
+					Ainda não tem cadastro?<br /> Preecha os dados abaixo e crie sua
+					conta!.
+				</h3>
+				<div class="col-md-6">
+					Login: <br />
+					<b:inputText placeholder="Login" fieldSize="sm" />
+				</div>
+				<div class="col-md-6">
+					Senha: <br />
+					<b:inputText placeholder="Senha" fieldSize="sm" />
+				</div>
+				<div class="col-md-6">
+					Confirmar Senha: <br />
+					<b:inputText placeholder="Confirmar Senha" fieldSize="sm" />
+				</div>
+				<div class="col-md-6">
+					Nome: <br />
+					<b:inputText placeholder="Nome" fieldSize="sm" />
+				</div>
+				<div class="col-md-6">
+					Email: <br />
+					<b:inputText placeholder="Email" fieldSize="sm" />
+				</div>
+				<div class="col-md-6">
+					Telefone: <br />
+					<b:inputText placeholder="Telefone" fieldSize="sm" />
+				</div>
+				<b:commandButton value="Cadastrar" look="sucess"
+					icon="chevron-right" iconAlign="right"></b:commandButton>
+			</div>
+		</div>
+	</h:form>
+
+
+</h:body>
+</html>
