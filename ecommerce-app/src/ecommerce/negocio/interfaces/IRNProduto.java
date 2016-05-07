@@ -3,11 +3,11 @@ package ecommerce.negocio.interfaces;
 import ecommerce.basicas.Produto;
 
 public interface IRNProduto {
-	public void inserir(Produto p);
 
-	public boolean verificaExistencia(Produto p);
+	public void inserirValido(Produto produto);
+	
+	public boolean verificaExistencia(Produto produto);
 
-	public boolean validaObjeto(Produto p);
+	public boolean validaObjeto(Produto produto);
 
-	public boolean verificaNome(Produto p);
 }

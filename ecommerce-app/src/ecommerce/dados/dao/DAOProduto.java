@@ -12,4 +12,13 @@ public class DAOProduto extends DAOGenerico<Produto> implements IDAOProduto {
 		super(em);
 	}
 
+	public final Produto pesquisarPorNome(String nome) {
+		Produto instance = null;
+		try {
+			instance = (Produto) getEntityManager().find(classePersistente, nome);
+		} catch (RuntimeException re) {
+			re.printStackTrace();
+		}
+		return instance;
+	}
 }
