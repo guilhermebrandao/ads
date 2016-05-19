@@ -15,11 +15,12 @@ public class RNCliente implements IRNCliente {
 
 	@Override
 	public void inserirValido(Cliente cliente) {
-		if(verificaExistencia(cliente) && validaObjeto(cliente)){
+		if (verificaExistencia(cliente) && validaObjeto(cliente)) {
 			try {
 				dao.inserir(cliente);
 			} catch (Exception e) {
-				System.out.println("Erro ao tentar inserir novo cliente" + e.getMessage());
+				System.out.println("Erro ao tentar inserir novo cliente"
+						+ e.getMessage());
 			}
 		}
 
@@ -43,14 +44,22 @@ public class RNCliente implements IRNCliente {
 			return true;
 		} else if (cliente.getSenha() != null) {
 			return true;
-		} else if (cliente.getEmail() != null){
+		} else if (cliente.getEmail() != null) {
 			return true;
-		} else if (cliente.getNome() != null){
+		} else if (cliente.getNome() != null) {
 			return true;
 		} else {
 			return false;
 		}
 
 	}
+
+	@Override
+	public boolean verficaLoginSenha(String login, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
 
 }

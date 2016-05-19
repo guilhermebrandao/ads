@@ -14,7 +14,7 @@ public abstract class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private int id;
+	private Integer id;
 	
 	@Column(nullable = false, length=16)
 	private String login;

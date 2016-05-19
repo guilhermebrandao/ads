@@ -20,7 +20,7 @@ public class DAOFactory {
 	private static final EntityManagerFactory factory;
 
 	static {
-		factory = Persistence.createEntityManagerFactory("testePSC");
+		factory = Persistence.createEntityManagerFactory("ecommerce");
 		if (manager == null || !manager.isOpen()) {
 			manager = factory.createEntityManager();
 		}

@@ -1,5 +1,6 @@
 package ecommerce.basicas;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -34,7 +35,7 @@ public class Endereco {
 	@Column(nullable=false, length=2)
 	private UF uf;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "endereco")
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "endereco",cascade=CascadeType.ALL)
 	private Cliente cliente;
 
 	/**

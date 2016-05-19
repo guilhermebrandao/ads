@@ -33,7 +33,7 @@ public class ItemCarrinho {
 	@Column(precision=10, scale =2)
 	private BigDecimal precoUnitario;
 	
-	@ManyToOne
+	@ManyToOne (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Carrinho carrinho;
 	
 	/**

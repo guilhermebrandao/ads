@@ -2,8 +2,10 @@ package ecommerce.basicas;
 
 import java.math.BigDecimal;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -20,13 +22,13 @@ public class Produto {
 	@Column(nullable = false, length=50)
 	private String nome;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Categoria categoria;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Carrinho carrinho;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Fornecedor fornecedor;
 	
 	@Column(nullable = false, length=300)
@@ -41,7 +43,7 @@ public class Produto {
 	@Column(nullable=false)
 	private String codigoDeBarra;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private ItemCarrinho itemCarrinho;
 
 	/**

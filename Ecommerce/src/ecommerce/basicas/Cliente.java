@@ -20,10 +20,10 @@ public class Cliente extends Usuario {
 	@Column(nullable=false, length=16)
 	private String cartaoDeCredito;
 	
-	@OneToOne
+	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Endereco endereco;
 	
-	@OneToOne
+	@OneToOne (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Carrinho carrinho;
 	
 	@OneToMany(mappedBy = "cliente", targetEntity = Pedido.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)

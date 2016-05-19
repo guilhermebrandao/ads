@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+
 @Entity
 @Table(name="TBCliente")
 public class Cliente extends Usuario {
@@ -20,7 +22,7 @@ public class Cliente extends Usuario {
 	@Column(nullable=false, length=16)
 	private String cartaoDeCredito;
 	
-	@OneToOne
+	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Endereco endereco;
 	
 	@OneToOne
