@@ -1,5 +1,7 @@
 package ecommerce.teste;
 
+import java.util.ArrayList;
+
 import ecommerce.basicas.Cliente;
 import ecommerce.basicas.Endereco;
 import ecommerce.basicas.UF;
@@ -9,7 +11,38 @@ import ecommerce.fachada.Fachada;
 
 public class TesteInserir {
 
-	public static void main(String[] args) {
+	public static void inserirColecaoCliente() {
+		Fachada fachada = new Fachada();
+
+		Cliente cliente;
+
+		Endereco endereco = new Endereco();
+		endereco.setBairro("bairro");
+		endereco.setCidade("cidade");
+		endereco.setLogradouro("logradouro");
+		endereco.setNumero("174");
+		endereco.setUf(UF.PE);
+
+		ArrayList<Cliente> clientes = new ArrayList<>();
+		for (int i = 0; i < 10; i++) {
+			cliente = new Cliente();
+			cliente.setLogin(i + " login");
+			cliente.setSenha(i + "senha");
+			cliente.setNome(i + "nome");
+			cliente.setEmail(i + "email@email.com");
+			cliente.setTelefone(i + "telefone");
+			cliente.setTipoUsuario(i + "2");
+			cliente.setEndereco(endereco);
+			cliente.setCartaoDeCredito("1234567812345678");
+
+			clientes.add(cliente);
+		}
+
+		DAOCliente dao = DAOFactory.getDAOCliente();
+		dao.inserirColecao(clientes);
+	}
+
+	public static void inserirCliente(){
 		Fachada fachada = new Fachada();
 
 		Cliente cliente = new Cliente();
@@ -34,6 +67,26 @@ public class TesteInserir {
 		DAOCliente dao = DAOFactory.getDAOCliente();
 		dao.inserir(cliente);
 
+	}
+	
+	public static void deletarCliente(){
+		Cliente cliente = new Cliente();
+
+		cliente.setId(6);
+
+		DAOCliente dao = DAOFactory.getDAOCliente();
+		dao.remover(cliente);
+	}
+
+	public static void pesquisarCliente(){
+		DAOCliente dao = DAOFactory.getDAOCliente();
+		Cliente cliente = dao.pesquisarPorId(7);
+		
+		System.out.println(cliente.getId() + " - " + cliente.getCartaoDeCredito() + ", " + cliente.getEmail() + ", " + cliente.getLogin() + ", " + cliente.getSenha() + ", " + cliente.getTelefone()  + ", " + cliente.getEndereco().toString() );
+	}
+	
+	public static void main(String[] args) {
+		pesquisarCliente();
 	}
 
 }
