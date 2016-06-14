@@ -12,8 +12,6 @@ import ecommerce.fachada.Fachada;
 public class TesteInserir {
 
 	public static void inserirColecaoCliente() {
-		Fachada fachada = new Fachada();
-
 		Cliente cliente;
 
 		Endereco endereco = new Endereco();
@@ -26,12 +24,11 @@ public class TesteInserir {
 		ArrayList<Cliente> clientes = new ArrayList<>();
 		for (int i = 0; i < 10; i++) {
 			cliente = new Cliente();
-			cliente.setLogin(i + " login");
-			cliente.setSenha(i + "senha");
-			cliente.setNome(i + "nome");
-			cliente.setEmail(i + "email@email.com");
-			cliente.setTelefone(i + "telefone");
-			cliente.setTipoUsuario(i + "2");
+			cliente.setSenha(i + " senha");
+			cliente.setNome(i + " nome");
+			cliente.setEmail(i + " email@email.com");
+			cliente.setTelefone(i + " telefone");
+			cliente.setTipoUsuario(i + " 2");
 			cliente.setEndereco(endereco);
 			cliente.setCartaoDeCredito("1234567812345678");
 
@@ -42,15 +39,14 @@ public class TesteInserir {
 		dao.inserirColecao(clientes);
 	}
 
-	public static void inserirCliente(){
+	public static void inserirCliente() {
 		Fachada fachada = new Fachada();
 
 		Cliente cliente = new Cliente();
 
-		cliente.setLogin("login");
 		cliente.setSenha("senha");
 		cliente.setNome("nome");
-		cliente.setEmail("email@email.com");
+		cliente.setEmail("1email@email.com");
 		cliente.setTelefone("telefone");
 		cliente.setTipoUsuario("2");
 
@@ -64,12 +60,11 @@ public class TesteInserir {
 		cliente.setEndereco(endereco);
 		cliente.setCartaoDeCredito("1234567812345678");
 
-		DAOCliente dao = DAOFactory.getDAOCliente();
-		dao.inserir(cliente);
+		fachada.incluirCliente(cliente);
 
 	}
-	
-	public static void deletarCliente(){
+
+	public static void deletarCliente() {
 		Cliente cliente = new Cliente();
 
 		cliente.setId(6);
@@ -78,15 +73,27 @@ public class TesteInserir {
 		dao.remover(cliente);
 	}
 
-	public static void pesquisarCliente(){
+	public static void pesquisarCliente() {
 		DAOCliente dao = DAOFactory.getDAOCliente();
 		Cliente cliente = dao.pesquisarPorId(7);
-		
-		System.out.println(cliente.getId() + " - " + cliente.getCartaoDeCredito() + ", " + cliente.getEmail() + ", " + cliente.getLogin() + ", " + cliente.getSenha() + ", " + cliente.getTelefone()  + ", " + cliente.getEndereco().toString() );
-	}
-	
-	public static void main(String[] args) {
-		pesquisarCliente();
+
+		System.out.println(cliente.getId() + " - "
+				+ cliente.getCartaoDeCredito() + ", " + cliente.getEmail()
+				+  ", " + cliente.getSenha() + ", "
+				+ cliente.getTelefone() + ", "
+				+ cliente.getEndereco().toString());
 	}
 
+	public static void testaRemoverFachada() {
+		Cliente cliente = new Cliente();
+		cliente.setEmail("3email@email.com");
+		
+		
+		Fachada fachada = new Fachada();
+		fachada.excluirCliente(cliente);
+	}
+
+	public static void main(String[] args) {
+		inserirColecaoCliente();
+	}
 }

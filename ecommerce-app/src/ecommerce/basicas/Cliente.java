@@ -10,12 +10,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Cascade;
-
 @Entity
 @Table(name="TBCliente")
 public class Cliente extends Usuario {
 
+	public Cliente(){}
+	
 	@Column(nullable = false, length=11) // Formato 81988887777
 	private String telefone;
 	
@@ -24,9 +24,6 @@ public class Cliente extends Usuario {
 	
 	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Endereco endereco;
-	
-	@OneToOne
-	private Carrinho carrinho;
 	
 	@OneToMany(mappedBy = "cliente", targetEntity = Pedido.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Pedido> pedidos;
@@ -67,18 +64,7 @@ public class Cliente extends Usuario {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	/**
-	 * @return the carrinho
-	 */
-	public Carrinho getCarrinho() {
-		return carrinho;
-	}
-	/**
-	 * @param carrinho the carrinho to set
-	 */
-	public void setCarrinho(Carrinho carrinho) {
-		this.carrinho = carrinho;
-	}
+
 	/**
 	 * @return the pedido
 	 */

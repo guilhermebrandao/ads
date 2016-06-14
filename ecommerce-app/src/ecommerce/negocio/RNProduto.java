@@ -24,7 +24,8 @@ public class RNProduto implements IRNProduto {
 			try {
 				dao.inserir(p);
 			} catch (Exception e) {
-				System.out.println("Erro ao tentar adicionar cliente" + e.getMessage());
+				System.out.println("Erro ao tentar adicionar cliente"
+						+ e.getMessage());
 			}
 		}
 	}
@@ -34,17 +35,10 @@ public class RNProduto implements IRNProduto {
 	 */
 	@Override
 	public boolean validaObjeto(Produto p) {
-		if (p.getCarrinho() != null) {
-			return true;
-		} else if (p.getCarrinhoImagem() != null) {
-			return true;
-		} else if (p.getCategoria() != null) {
-			return true;
-		} else if (p.getCodigoDeBarra() != null) {
+
+		if (p.getCodigoDeBarra() != null) {
 			return true;
 		} else if (p.getDescricao() != null) {
-			return true;
-		} else if (p.getFornecedor() != null) {
 			return true;
 		} else if (p.getId() != 0) {
 			return true;

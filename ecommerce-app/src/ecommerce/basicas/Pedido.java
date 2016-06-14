@@ -3,20 +3,38 @@ package ecommerce.basicas;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="TBPedido")
 public class Pedido {
 	
+	public Pedido(){}
+	
+	/**
+	 * @param cliente
+	 * @param dataPedido
+	 * @param status
+	 * @param produtos
+	 */
+	public Pedido(Cliente cliente, Calendar dataPedido, String status,
+			List<Produto> produtos) {
+		super();
+		this.cliente = cliente;
+		this.dataPedido = dataPedido;
+		this.status = status;
+		this.produtos = produtos;
+	}
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -30,8 +48,19 @@ public class Pedido {
 	@Column(nullable=false, length=10)
 	private String status;
 	
-	@OneToMany(mappedBy = "pedido", targetEntity = Pagamento.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Pagamento> pagamento;
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name="TBPedidoProduto",
+			   joinColumns=@JoinColumn(name="idPedido"),
+			   inverseJoinColumns=@JoinColumn(name="idProduto"))
+	private List<Produto> produtos;
+	
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
 
 	/**
 	 * @return the id
@@ -93,18 +122,4 @@ public class Pedido {
 		this.status = status;
 	}
 
-	/**
-	 * @return the pagamento
-	 */
-	public List<Pagamento> getPagamento() {
-		return pagamento;
-	}
-
-	/**
-	 * @param pagamento
-	 *            the pagamento to set
-	 */
-	public void setPagamento(List<Pagamento> pagamento) {
-		this.pagamento = pagamento;
-	}
 }

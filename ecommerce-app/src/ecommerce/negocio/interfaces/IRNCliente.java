@@ -7,12 +7,21 @@ public interface IRNCliente {
 	public void inserirValido(Cliente cliente);
 
 	/**
+	 * Verifica se o cliente existe no banco de dados e tenta removê-lo.
+	 * 
+	 * @param cliente
+	 *            Objeto do tipo Cliente.
+	 */
+	public void removerExistente(Cliente cliente);
+
+	/**
 	 * Verifica se o cliente existe no banco de dados.
 	 * 
 	 * @param cliente
 	 *            Objeto do tipo Cliente.
 	 * @return Retorna verdadeiro se o Cliente existir no banco de dados.
 	 */
+
 	public boolean verificaExistencia(Cliente cliente);
 
 	/**
@@ -25,5 +34,5 @@ public interface IRNCliente {
 	 */
 	public boolean validaObjeto(Cliente cliente);
 
-	public boolean verficaLoginSenha (String login, String senha);
+	public boolean verficaLoginSenha(String login, String senha);
 }

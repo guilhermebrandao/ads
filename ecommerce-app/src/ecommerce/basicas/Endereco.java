@@ -13,7 +13,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="TBEndereco")
 public class Endereco {
-
+	
+	public Endereco(){};
+	
 	@Id
 	@GeneratedValue
 	private int id;

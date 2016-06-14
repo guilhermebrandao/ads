@@ -1,6 +1,8 @@
 package ecommerce.dados.dao;
 
+import javax.management.Query;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import ecommerce.basicas.Cliente;
 import ecommerce.dados.dao.interfaces.IDAOCliente;
@@ -11,16 +13,19 @@ public class DAOCliente extends DAOUsuario<Cliente> implements IDAOCliente {
 		super(em);
 	}
 
-	@Override
-	public final Cliente pesquisarPorEmail(String email) {
-		Cliente instance = null;
-		try {
-			instance = (Cliente) getEntityManager().find(classePersistente, email);
-		} catch (RuntimeException re) {
-			re.printStackTrace();
-		}
-		return instance;
-	}
+//	@Override
+//	public Cliente pesquisarPorEmail(String email) {
+//		Cliente instance = null;
+//		try {
+//			String consulta = "Select c from Cliente c WHERE c.email = :email";
+//			TypedQuery<Cliente> query = getEntityManager().createQuery(consulta, Cliente.class);
+//			query.setParameter("email", email);
+//			instance = query.getSingleResult();
+//		} catch (RuntimeException re) {
+//			re.printStackTrace();
+//		}
+//		return instance;
+//	}
 
 	@Override
 	public boolean verificaLogin(String login) {

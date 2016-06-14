@@ -1,18 +1,45 @@
 package ecommerce.basicas;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="TBProduto")
 public class Produto {
 	
+	public Produto(){}
+	
+	
+	
+	/**
+	 * @param nome
+	 * @param pedidos
+	 * @param descricao
+	 * @param preco
+	 * @param codigoDeBarra
+	 */
+	public Produto(String nome, List<Pedido> pedidos, String descricao,
+			BigDecimal preco, String codigoDeBarra) {
+		super();
+		this.nome = nome;
+		this.pedidos = pedidos;
+		this.descricao = descricao;
+		this.preco = preco;
+		this.codigoDeBarra = codigoDeBarra;
+	}
+
+
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -20,14 +47,11 @@ public class Produto {
 	@Column(nullable = false, length=50)
 	private String nome;
 	
-	@ManyToOne
-	private Categoria categoria;
-	
-	@ManyToOne
-	private Carrinho carrinho;
-	
-	@ManyToOne
-	private Fornecedor fornecedor;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name="TBPedidoProduto",
+			   joinColumns=@JoinColumn(name="idProduto"),
+			   inverseJoinColumns=@JoinColumn(name="idPedido"))
+	private List<Pedido> pedidos;
 	
 	@Column(nullable = false, length=300)
 	private String descricao;
@@ -36,13 +60,8 @@ public class Produto {
 	private BigDecimal preco;
 	
 	@Column(nullable=false)
-	private String carrinhoImagem;
-	
-	@Column(nullable=false)
 	private String codigoDeBarra;
 	
-	@ManyToOne
-	private ItemCarrinho itemCarrinho;
 
 	/**
 	 * @return the id
@@ -74,20 +93,6 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	/**
-	 * @return the categoria
-	 */
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	/**
-	 * @param categoria
-	 *            the categoria to set
-	 */
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
 
 	/**
 	 * @return the descricao
@@ -120,21 +125,6 @@ public class Produto {
 	}
 
 	/**
-	 * @return the carrinhoImagem
-	 */
-	public String getCarrinhoImagem() {
-		return carrinhoImagem;
-	}
-
-	/**
-	 * @param carrinhoImagem
-	 *            the carrinhoImagem to set
-	 */
-	public void setCarrinhoImagem(String carrinhoImagem) {
-		this.carrinhoImagem = carrinhoImagem;
-	}
-
-	/**
 	 * @return the codigoDeBarra
 	 */
 	public String getCodigoDeBarra() {
@@ -150,44 +140,17 @@ public class Produto {
 	}
 
 	/**
-	 * @return the carrinho
+	 * @return the pedidos
 	 */
-	public Carrinho getCarrinho() {
-		return carrinho;
+	public List<Pedido> getPedidos() {
+		return pedidos;
 	}
 
 	/**
-	 * @param carrinho the carrinho to set
+	 * @param pedidos the pedidos to set
 	 */
-	public void setCarrinho(Carrinho carrinho) {
-		this.carrinho = carrinho;
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 
-	/**
-	 * @return the fornecedor
-	 */
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-	/**
-	 * @param fornecedor the fornecedor to set
-	 */
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-
-	/**
-	 * @return the itemCarrinho
-	 */
-	public ItemCarrinho getItemCarrinho() {
-		return itemCarrinho;
-	}
-
-	/**
-	 * @param itemCarrinho the itemCarrinho to set
-	 */
-	public void setItemCarrinho(ItemCarrinho itemCarrinho) {
-		this.itemCarrinho = itemCarrinho;
-	}
 }

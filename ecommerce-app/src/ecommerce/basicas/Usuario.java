@@ -17,9 +17,6 @@ public abstract class Usuario {
 	private Integer id;
 	
 	@Column(nullable = false, length=16)
-	private String login;
-	
-	@Column(nullable = false, length=16)
 	private String senha;
 	
 	@Column(nullable = false, length = 50)
@@ -44,21 +41,6 @@ public abstract class Usuario {
 	 */
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	/**
-	 * @return the login
-	 */
-	public String getLogin() {
-		return login;
-	}
-
-	/**
-	 * @param login
-	 *            the login to set
-	 */
-	public void setLogin(String login) {
-		this.login = login;
 	}
 
 	/**

@@ -12,4 +12,5 @@ public class DAOUsuario<T extends Usuario> extends DAOGenerico<T> implements IDA
 		super(em);
 	}
 
+
 }

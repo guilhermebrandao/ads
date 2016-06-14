@@ -22,4 +22,9 @@ public class Fachada {
 		RNCliente rn = new RNCliente();
 		rn.inserirValido(cliente);
 	}
+	
+	public void excluirCliente (Cliente cliente){
+		RNCliente rn = new RNCliente();
+		rn.removerExistente(cliente);
+	}
 }

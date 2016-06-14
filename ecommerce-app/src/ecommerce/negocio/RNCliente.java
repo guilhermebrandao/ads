@@ -15,7 +15,7 @@ public class RNCliente implements IRNCliente {
 
 	@Override
 	public void inserirValido(Cliente cliente) {
-		if (verificaExistencia(cliente) && validaObjeto(cliente)) {
+		if (!verificaExistencia(cliente) && validaObjeto(cliente)) {
 			try {
 				dao.inserir(cliente);
 			} catch (Exception e) {
@@ -26,21 +26,19 @@ public class RNCliente implements IRNCliente {
 
 	}
 
-	@Override
-	public boolean verificaExistencia(Cliente cliente) {
-		if (dao.pesquisarPorEmail(cliente.getEmail()) == null) {
-			return true;
-		}
-		return false;
-	}
+//	@Override
+//	public boolean verificaExistencia(Cliente cliente) {
+//		if (dao.pesquisarPorEmail(cliente.getEmail()) != null) {
+//			return true;
+//		}
+//		return false;
+//	}
 
 	@Override
 	public boolean validaObjeto(Cliente cliente) {
 		if (cliente.getEndereco() != null) {
 			return true;
 		} else if (cliente.getTelefone() != null) {
-			return true;
-		} else if (cliente.getLogin() != null) {
 			return true;
 		} else if (cliente.getSenha() != null) {
 			return true;
@@ -59,6 +57,18 @@ public class RNCliente implements IRNCliente {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+//	@Override
+//	public void removerExistente(Cliente cliente) {
+//		if (verificaExistencia(cliente)){
+//			Cliente clienteExcl = dao.pesquisarPorEmail(cliente.getEmail());
+//			dao.remover(clienteExcl);
+//			System.out.println("Cliente excluído com sucesso.");
+//		} else {
+//			System.out.println("Não foi possível excluir o cliente.");
+//		}
+		
+//	}
 	
 	
 
