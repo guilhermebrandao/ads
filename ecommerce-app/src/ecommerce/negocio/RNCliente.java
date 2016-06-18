@@ -58,6 +58,18 @@ public class RNCliente implements IRNCliente {
 		return false;
 	}
 
+	@Override
+	public void removerExistente(Cliente cliente) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean verificaExistencia(Cliente cliente) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 //	@Override
 //	public void removerExistente(Cliente cliente) {
 //		if (verificaExistencia(cliente)){

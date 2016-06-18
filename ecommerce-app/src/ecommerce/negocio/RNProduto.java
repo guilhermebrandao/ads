@@ -23,8 +23,9 @@ public class RNProduto implements IRNProduto {
 		if (validaObjeto(p) && verificaExistencia(p)) {
 			try {
 				dao.inserir(p);
+				System.out.println("Produto adicionado com sucesso!");
 			} catch (Exception e) {
-				System.out.println("Erro ao tentar adicionar cliente"
+				System.out.println("Erro ao tentar adicionar produto"
 						+ e.getMessage());
 			}
 		}
