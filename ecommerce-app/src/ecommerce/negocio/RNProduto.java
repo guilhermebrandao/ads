@@ -1,5 +1,8 @@
 package ecommerce.negocio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ecommerce.basicas.Produto;
 import ecommerce.dados.dao.interfaces.IDAOProduto;
 import ecommerce.dados.generico.DAOFactory;
@@ -61,6 +64,10 @@ public class RNProduto implements IRNProduto {
 			return true;
 		}
 		return false;
+	}
+	
+	public List<Produto> listar() {
+		return DAOFactory.getDAOProduto().listarTodos();
 	}
 
 }

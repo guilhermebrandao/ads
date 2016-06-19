@@ -1,5 +1,8 @@
 package ecommerce.fachada;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ecommerce.basicas.Cliente;
 import ecommerce.basicas.Produto;
 import ecommerce.negocio.RNCliente;
@@ -14,6 +17,10 @@ public class Fachada {
 		rn.inserirValido(produto);
 	}
 	
+	public List<Produto> listarProdutos(){
+		RNProduto rn = new RNProduto();
+		return rn.listar();
+	}
 	// ------------- Métodos do Cliente --------------
 	
 	public void incluirCliente (Cliente cliente){

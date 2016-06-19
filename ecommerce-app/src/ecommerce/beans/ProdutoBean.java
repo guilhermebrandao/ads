@@ -12,21 +12,35 @@ import ecommerce.basicas.Pedido;
 import ecommerce.basicas.Produto;
 import ecommerce.fachada.Fachada;
 
-
 @ManagedBean
 @SessionScoped
 public class ProdutoBean {
-	
+
 	private Fachada fachada;
 	private Produto produto;
 	private List<Produto> produtos;
 
-	public ProdutoBean(){
+	public ProdutoBean() {
 		this.fachada = new Fachada();
 		this.produto = new Produto();
-		this.produtos = new ArrayList<Produto>();		
+		this.produtos = new ArrayList<Produto>();
 	}
-	
+
+
+	public void cadastrarProduto() throws Exception {
+		try {
+
+			fachada.incluirProduto(produto);
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação: ", "Cadastro Realizado com Sucesso!"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informação: ", e.getMessage()));
+		}
+
+	}
+
 	public Fachada getFachada() {
 		return fachada;
 	}
@@ -44,25 +58,10 @@ public class ProdutoBean {
 	}
 
 	public List<Produto> getProdutos() {
-		return produtos;
+		return produtos = fachada.listarProdutos();
 	}
 
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
-
-	public void cadastrarProduto() throws Exception {
-		try {
-			
-			fachada.incluirProduto(produto);
-			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação: ", "Cadastro Realizado com Sucesso!"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informação: ", e.getMessage()));
-		}
-		
-	}
-	
 }

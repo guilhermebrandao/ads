@@ -18,7 +18,25 @@
 		<b:navLink value="Cadastro de Novos Usuarios" href="#"></b:navLink>
 		<b:navLink value="Login | Cadastrar" href="cadastroLogin.xhtml"></b:navLink>
 	</b:navbarLinks>
+	<p:dataTable id="tabelaprodutos" var="produto"
+		value="#{produtoBean.produtos}">
+		<p:column headerText="Codigo de Barra">
+			<h:outputText value="#{produto.codigoDeBarra}" />
+		</p:column>
+		<p:column headerText="Nome">
+			<h:outputText value="#{produto.nome}" />
+		</p:column>
+		<p:column headerText="Descrição">
+			<h:outputText value="#{produto.descricao}" />
+		</p:column>
+		<p:column headerText="Preço">
+			<h:outputText value="#{produto.preco}" />
+		</p:column>
+	</p:dataTable>
+	
 
+
+	<!--        				A parti daqui tá funcionando                            -->
 	<p:commandButton value="Cadastrar" type="button" id="cadastrar"
 		onclick="PF('dialogCadastro').show();" />
 

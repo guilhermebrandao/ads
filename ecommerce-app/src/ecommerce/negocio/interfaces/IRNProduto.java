@@ -1,13 +1,17 @@
 package ecommerce.negocio.interfaces;
 
+import java.util.List;
+
 import ecommerce.basicas.Produto;
 
 public interface IRNProduto {
 
-	public void inserirValido(Produto produto);
+	void inserirValido(Produto produto);
 	
-	public boolean verificaExistencia(Produto produto);
+	boolean verificaExistencia(Produto produto);
 
-	public boolean validaObjeto(Produto produto);
+	boolean validaObjeto(Produto produto);
+
+	List<Produto> listar();
 
 }

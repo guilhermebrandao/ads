@@ -6,11 +6,12 @@ import java.util.List;
 
 import ecommerce.basicas.Produto;
 import ecommerce.dados.generico.DAOFactory;
+import ecommerce.fachada.Fachada;
 
 public class TesteProduto {
 
 	public static void main(String[] args) {
-		inserirColecaoPedido();
+		listar();
 	}
 
 	private static void inserirColecaoPedido() {
@@ -23,5 +24,17 @@ public class TesteProduto {
 		}
 		
 		DAOFactory.getDAOProduto().inserirColecao(produtos);
+	}
+	
+	private static void listar(){
+		Fachada fachada = new Fachada();
+		
+		for (Produto produto : fachada.listarProdutos()){
+			System.out.println("\ncod barra : " + produto.getCodigoDeBarra() +
+					"\nnome: " + produto.getNome() + 
+					"\ndescricao: " + produto.getDescricao() + 
+					"\npreco: " + produto.getPreco() + 
+					"\nid: " + produto.getId() + "\n");
+		}
 	}
 }
