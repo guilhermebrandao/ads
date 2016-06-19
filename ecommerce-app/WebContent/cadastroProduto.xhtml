@@ -37,14 +37,14 @@
 		<p:column headerText="Preço">
 			<h:outputText value="#{produto.preco}" />
 		</p:column>
-		  <p:column headerText="Ações">
-						<!--  <p:commandLink title="Alterar" update="editaluno"
+		<!--  <p:column headerText="Ações">
+						<p:commandLink title="Alterar" update="editproduto"
 							oncomplete="PF('dialogEdicao').show();" immediate="true">
 							<f:setPropertyActionListener target="#{produtoBean.produto}"
 								value="#{produto}" />
-						</p:commandLink>-->
+						</p:commandLink>
 						
-		</p:column>
+		</p:column> -->  
 	</p:dataTable>
 	
 <br></br>
@@ -71,8 +71,10 @@
 				<p:outputLabel for="preco" value="preco" />
 				<p:inputText id="preco" value="#{produtoBean.produto.preco}" />
 			</h:panelGrid>
-			<p:commandButton actionListener="#{produtoBean.cadastrarProduto}"
-				value="Cadastrar" oncomplete="PF('dialogCadastro').hide();"/>
+			<p:commandButton actionListener="#{produtoBean.cadastrarProduto}" value="Cadastrar"
+				update=":tabelaprodutos"
+					oncomplete="PF('dialogCadastro').hide();" />
+
 							</h:form>
 	</p:dialog>
 <!-- Até aqui -->
@@ -80,8 +82,8 @@
 <!-- MODAL DE EDIÇÃO DO PRODUTO -->
 <p:commandButton value="Editar" type="button" id="editar"
 		onclick="PF('dialogEdicao').show();" />
-		<p:dialog header="Editar Aluno" widgetVar="dialogEdicao" modal="true"
-			id="editaluno">
+		<p:dialog header="Editar Produto" widgetVar="dialogEdicao" modal="true"
+			id="editproduto">
 				<h:form id="formedicao">
 				<h:panelGrid columns="2" cellpadding="5">
 					<p:outputLabel for="codigoDeBarra" value="Codigo de Barra" />

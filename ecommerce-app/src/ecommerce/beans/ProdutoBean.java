@@ -12,6 +12,7 @@ import ecommerce.basicas.Pedido;
 import ecommerce.basicas.Produto;
 import ecommerce.fachada.Fachada;
 
+
 @ManagedBean
 @SessionScoped
 public class ProdutoBean {
@@ -26,10 +27,17 @@ public class ProdutoBean {
 		this.produtos = new ArrayList<Produto>();
 	}
 
-
+	public void clear() {
+		
+		produto.setCodigoDeBarra(null);
+		produto.setNome(null);
+		produto.setDescricao(null);
+		produto.setPreco(null);
+		produto = new Produto();
+	}
 	public void cadastrarProduto() throws Exception {
 		try {
-
+			
 			fachada.incluirProduto(produto);
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação: ", "Cadastro Realizado com Sucesso!"));
@@ -38,6 +46,7 @@ public class ProdutoBean {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informação: ", e.getMessage()));
 		}
+	
 	}
 	public void edit() throws Exception {
 		try {
@@ -50,15 +59,9 @@ public class ProdutoBean {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informação: ", e.getMessage()));
 		}
+
 	}
-	public void clear() {
-		produto.setId(null);
-		produto.setCodigoDeBarra(null);
-		produto.setNome(null);
-		produto.setDescricao(null);
-		produto.setPreco(null);
-	
-	}
+
 	public Fachada getFachada() {
 		return fachada;
 	}
