@@ -24,10 +24,7 @@ public class ProdutoBean {
 	public ProdutoBean(){
 		this.fachada = new Fachada();
 		this.produto = new Produto();
-		this.produtos = new ArrayList<Produto>();
-		
-		
-		
+		this.produtos = new ArrayList<Produto>();		
 	}
 	
 	public Fachada getFachada() {

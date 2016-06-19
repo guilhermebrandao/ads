@@ -13,8 +13,6 @@ public class Fachada {
 		RNProduto rn = new RNProduto();
 		rn.inserirValido(produto);
 	}
-
-	
 	
 	// ------------- Métodos do Cliente --------------
 	
