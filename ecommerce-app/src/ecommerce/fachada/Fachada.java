@@ -21,6 +21,11 @@ public class Fachada {
 		RNProduto rn = new RNProduto();
 		return rn.listar();
 	}
+	
+	public void alterarProduto(Produto produto){
+		RNProduto rn = new RNProduto();
+		rn.alterarValido(produto);
+	}
 	// ------------- Métodos do Cliente --------------
 	
 	public void incluirCliente (Cliente cliente){

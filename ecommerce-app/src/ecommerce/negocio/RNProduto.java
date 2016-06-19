@@ -34,6 +34,18 @@ public class RNProduto implements IRNProduto {
 		}
 	}
 
+	public void alterarValido(Produto p) {
+		if (validaObjeto(p) && verificaExistencia(p)) {
+			try {
+				dao.alterar(p);
+				System.out.println("Produto alterado com sucesso!");
+			} catch (Exception e) {
+				System.out.println("Erro ao tentar alterar produto"
+						+ e.getMessage());
+			}
+		}
+	}
+	
 	/***
 	 * Retorna verdadeiro se todos os campos obrigatórios estivirem preenchidos
 	 */

@@ -38,9 +38,27 @@ public class ProdutoBean {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informação: ", e.getMessage()));
 		}
-
 	}
+	public void edit() throws Exception {
+		try {
 
+			fachada.alterarProduto(produto);
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação: ", "Alteração Realizada com Sucesso!"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informação: ", e.getMessage()));
+		}
+	}
+	public void clear() {
+		produto.setId(null);
+		produto.setCodigoDeBarra(null);
+		produto.setNome(null);
+		produto.setDescricao(null);
+		produto.setPreco(null);
+	
+	}
 	public Fachada getFachada() {
 		return fachada;
 	}
