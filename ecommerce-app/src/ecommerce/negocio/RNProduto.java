@@ -35,7 +35,7 @@ public class RNProduto implements IRNProduto {
 	}
 
 	public void alterarValido(Produto p) {
-		if (validaObjeto(p) && verificaExistencia(p)) {
+		if (validaObjeto(p) && !verificaExistencia(p)) {
 			try {
 				dao.alterar(p);
 				System.out.println("Produto alterado com sucesso!");

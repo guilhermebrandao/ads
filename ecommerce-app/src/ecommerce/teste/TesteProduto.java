@@ -11,7 +11,7 @@ import ecommerce.fachada.Fachada;
 public class TesteProduto {
 
 	public static void main(String[] args) {
-		listar();
+		inserirColecaoPedido();
 	}
 
 	private static void inserirColecaoPedido() {

@@ -4,7 +4,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsp/jstl/core">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
 	<title>Ecommerce do Poder</title>
@@ -12,8 +13,8 @@
 		content="Antônio Neto, Derick Irineu, Guilherme Brandão"></meta>
 </h:head>
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
-	<b:navBar brand="Ecommerce do Poder" href="index.xhtml"
-		inverse="true" fixed="top">
+	<b:navBar brand="Ecommerce" href="index.xhtml" inverse="true"
+		fixed="top">
 		<b:navbarLinks>
 			<b:navLink value="Atendimento" href="#"></b:navLink>
 			<b:navLink value="Meus Pedidos" href="#"></b:navLink>
@@ -36,6 +37,64 @@
 				icon="chevron-right" iconAlign="right" />
 		</h:form>
 	</b:navBar>
+
+	<h:form id="form">
+
+
+		<p:dataGrid var="produto" value="#{produtoViewGrid.produtos}"
+			columns="3" layout="grid" rows="12" paginator="true" id="produtos"
+			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="6,12,16">
+
+			<f:facet name="header">
+            Produtos
+        </f:facet>
+
+			<p:panel header="#{produto.nome}" style="text-align:center">
+				<h:panelGrid columns="1" style="width:100%">
+					<p:graphicImage name="demo/images/car/#{car.brand}.gif" />
+
+					<h:outputText value="#{produto.descricao}" />
+
+					<p:commandLink update=":form:produtoDetail"
+						oncomplete="PF('produtoDialog').show()" title="View Detail">
+						<h:outputText styleClass="ui-icon ui-icon-search"
+							style="margin:0 auto;" />
+						<f:setPropertyActionListener value="#{produto}"
+							target="#{produtoGridView.produtoSelecionado}" />
+					</p:commandLink>
+				</h:panelGrid>
+			</p:panel>
+
+		</p:dataGrid>
+
+		<p:dialog header="Produto Info" widgetVar="produtoDialog" modal="true"
+			showEffect="fade" hideEffect="fade" resizable="false">
+			<p:outputPanel id="produtoDetail" style="text-align:center;">
+				<p:panelGrid columns="2"
+					rendered="#{not empty produtoGridView.produtoSelecionado}"
+					columnClasses="label,value">
+					<f:facet name="header">
+						<p:graphicImage
+							name="demo/images/car/#{produtoGridView.produtoSelecionado.brand}-big.gif" />
+					</f:facet>
+
+					<h:outputText value="Id:" />
+					<h:outputText value="#{produtoGridView.produtoSelecionado.id}" />
+
+					<h:outputText value="Year" />
+					<h:outputText value="#{produtoGridView.produtoSelecionado.year}" />
+
+					<h:outputText value="Color:" />
+					<h:outputText value="#{produtoGridView.produtoSelecionado.color}"
+						style="color:#{produtoGridView.produtoSelecionado.color}" />
+
+					<h:outputText value="Price" />
+					<h:outputText value="$#{produtoGridView.produtoSelecionado.price}" />
+				</p:panelGrid>
+			</p:outputPanel>
+		</p:dialog>
+	</h:form>
 
 </h:body>
 </html>

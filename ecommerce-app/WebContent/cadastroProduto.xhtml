@@ -11,7 +11,7 @@
 		content="Antônio Neto, Derick Irineu, Guilherme Brandão"></meta>
 </h:head>
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
-	<b:navBar brand="Ecommerce do Poder" href="index.xhtml" inverse="true"
+	<b:navBar brand="Ecommerce" href="index.xhtml" inverse="true"
 		fixed="top" />
 	<b:navbarLinks>
 		<b:navLink value="Cadastro de Produtos" href="#"></b:navLink>
@@ -19,11 +19,11 @@
 		<b:navLink value="Login | Cadastrar" href="cadastroLogin.xhtml"></b:navLink>
 	</b:navbarLinks>
 	<br></br>
-				<br></br>
+	<br></br>
 	<p:dataTable id="tabelaprodutos" var="produto"
 		value="#{produtoBean.produtos}">
 		<p:column headerText="Id">
-		<h:outputText value="#{produto.id}" />
+			<h:outputText value="#{produto.id}" />
 		</p:column>
 		<p:column headerText="Codigo de Barra">
 			<h:outputText value="#{produto.codigoDeBarra}" />
@@ -44,11 +44,11 @@
 								value="#{produto}" />
 						</p:commandLink>
 						
-		</p:column> -->  
+		</p:column> -->
 	</p:dataTable>
-	
-<br></br>
-				<br></br>
+
+	<br></br>
+	<br></br>
 
 	<!--        				A parti daqui tá funcionando                            -->
 	<p:commandButton value="Cadastrar" type="button" id="cadastrar"
@@ -56,7 +56,7 @@
 	<p:dialog header="Cadastro de Produto" widgetVar="dialogCadastro"
 		modal="true">
 		<h:form id="formcadastro">
-				<h:panelGrid columns="2" cellpadding="5">
+			<h:panelGrid columns="2" cellpadding="5">
 				<p:outputLabel for="codigoDeBarra" value="Codigo de Barra" />
 				<p:inputText id="codigoDeBarra"
 					value="#{produtoBean.produto.codigoDeBarra}" />
@@ -71,39 +71,45 @@
 				<p:outputLabel for="preco" value="preco" />
 				<p:inputText id="preco" value="#{produtoBean.produto.preco}" />
 			</h:panelGrid>
-			<p:commandButton actionListener="#{produtoBean.cadastrarProduto}" value="Cadastrar"
-				update=":tabelaprodutos"
-					oncomplete="PF('dialogCadastro').hide();" />
+			<p:commandButton actionListener="#{produtoBean.cadastrarProduto}"
+				value="Cadastrar" update=":tabelaprodutos"
+				oncomplete="PF('dialogCadastro').hide();" />
 
-							</h:form>
+		</h:form>
 	</p:dialog>
-<!-- Até aqui -->
+	<!-- Até aqui -->
 
-<!-- MODAL DE EDIÇÃO DO PRODUTO -->
-<p:commandButton value="Editar" type="button" id="editar"
+	<!-- MODAL DE EDIÇÃO DO PRODUTO -->
+	<p:commandButton value="Editar" type="button" id="editar"
 		onclick="PF('dialogEdicao').show();" />
-		<p:dialog header="Editar Produto" widgetVar="dialogEdicao" modal="true"
-			id="editproduto">
-				<h:form id="formedicao">
-				<h:panelGrid columns="2" cellpadding="5">
-					<p:outputLabel for="codigoDeBarra" value="Codigo de Barra" />
-					<p:inputText id="codigoDeBarra" value="#{produtoBean.produto.codigoDeBarra}" />
-				</h:panelGrid>
-				<h:panelGrid columns="4" cellpadding="5">
-				<p:outputLabel for="nome" value="Nome" />
+	<p:dialog header="Editar Produto" widgetVar="dialogEdicao" modal="true"
+		id="editproduto">
+		<h:form id="formedicao">
+		
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="id" value="ID: " />
+				<p:inputText id="id"
+					value="#{produtoBean.produto.id}" />
+			</h:panelGrid>
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="codigoDeBarra" value="Codigo de Barra: " />
+				<p:inputText id="codigoDeBarra"
+					value="#{produtoBean.produto.codigoDeBarra}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="nome" value="Nome: " />
 				<p:inputText id="nome" value="#{produtoBean.produto.nome}" />
 			</h:panelGrid>
 			<h:panelGrid columns="4" cellpadding="5">
-				<p:outputLabel for="descricao" value="Descricao" />
+				<p:outputLabel for="descricao" value="Descrição: " />
 				<p:inputText id="descricao" value="#{produtoBean.produto.descricao}" />
-				<p:outputLabel for="preco" value="preco" />
+				<p:outputLabel for="preco" value="Preço: " />
 				<p:inputText id="preco" value="#{produtoBean.produto.preco}" />
 			</h:panelGrid>
-				<p:commandButton actionListener="#{produtoBean.edit}" value="Editar"
-					update=":tabelaprodutos"
-					oncomplete="PF('dialogEdicao').hide();" />
-							</h:form>
-		</p:dialog>
+			<p:commandButton actionListener="#{produtoBean.edit}" value="Editar"
+				update=":tabelaprodutos" oncomplete="PF('dialogEdicao').hide();" />
+		</h:form>
+	</p:dialog>
 
 </h:body>
 

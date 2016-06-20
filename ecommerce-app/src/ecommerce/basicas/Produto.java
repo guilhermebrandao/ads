@@ -13,13 +13,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TBProduto")
+@Table(name = "TBProduto")
 public class Produto {
-	
-	public Produto(){}
-	
-	
-	
+
+	public Produto() {
+	}
+
 	/**
 	 * @param nome
 	 * @param pedidos
@@ -27,8 +26,7 @@ public class Produto {
 	 * @param preco
 	 * @param codigoDeBarra
 	 */
-	public Produto(String nome, List<Pedido> pedidos, String descricao,
-			BigDecimal preco, String codigoDeBarra) {
+	public Produto(String nome, List<Pedido> pedidos, String descricao, BigDecimal preco, String codigoDeBarra) {
 		super();
 		this.nome = nome;
 		this.pedidos = pedidos;
@@ -37,35 +35,31 @@ public class Produto {
 		this.codigoDeBarra = codigoDeBarra;
 	}
 
-
-
 	@Id
 	@GeneratedValue
-	private int id;
-	
-	@Column(nullable = false, length=50)
+	@Column(unique = true)
+	private Integer id;
+
+	@Column(nullable = false, length = 50)
 	private String nome;
-	
+
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name="TBPedidoProduto",
-			   joinColumns=@JoinColumn(name="idProduto"),
-			   inverseJoinColumns=@JoinColumn(name="idPedido"))
+	@JoinTable(name = "TBPedidoProduto", joinColumns = @JoinColumn(name = "idProduto") , inverseJoinColumns = @JoinColumn(name = "idPedido") )
 	private List<Pedido> pedidos;
-	
-	@Column(nullable = false, length=300)
+
+	@Column(nullable = false, length = 300)
 	private String descricao;
-	
-	@Column(precision=10, scale=2)
+
+	@Column(precision = 10, scale = 2)
 	private BigDecimal preco;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false, unique = true)
 	private String codigoDeBarra;
-	
 
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -73,7 +67,7 @@ public class Produto {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -91,7 +85,6 @@ public class Produto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 
 	/**
 	 * @return the descricao
@@ -146,7 +139,8 @@ public class Produto {
 	}
 
 	/**
-	 * @param pedidos the pedidos to set
+	 * @param pedidos
+	 *            the pedidos to set
 	 */
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
