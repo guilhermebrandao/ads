@@ -12,6 +12,9 @@
 	<meta name="author"
 		content="Antônio Neto, Derick Irineu, Guilherme Brandão"></meta>
 </h:head>
+
+				<!-- COISA PRETA  -->
+
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
 	<b:navBar brand="Ecommerce" href="index.xhtml" inverse="true"
 		fixed="top">
@@ -38,10 +41,19 @@
 		</h:form>
 	</b:navBar>
 
+	<br />
+	<div align="center">
+    <h:panelGrid columns="4" cellpadding="5">
+        <p:inputText id="name" placeholder = "Buscar" value="#{basicView.text}" />
+        <p:commandButton value="Buscar" update="display" icon="ui-icon-search" />
+        <h:outputText id="display" value="#{basicView.text}" />
+    </h:panelGrid>
+	</div>
+	<br />
+					<!-- GRID LISTAR PRODUTOS -->
+
 	<h:form id="form">
-
-
-		<p:dataGrid var="produto" value="#{produtoViewGrid.produtos}"
+		<p:dataGrid var="produto" value="#{produtoBean.produtos}"
 			columns="3" layout="grid" rows="12" paginator="true" id="produtos"
 			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			rowsPerPageTemplate="6,12,16">
@@ -52,7 +64,7 @@
 
 			<p:panel header="#{produto.nome}" style="text-align:center">
 				<h:panelGrid columns="1" style="width:100%">
-					<p:graphicImage name="demo/images/car/#{car.brand}.gif" />
+					<p:graphicImage	library="images" name="NA20.png" />
 
 					<h:outputText value="#{produto.descricao}" />
 
@@ -61,37 +73,41 @@
 						<h:outputText styleClass="ui-icon ui-icon-search"
 							style="margin:0 auto;" />
 						<f:setPropertyActionListener value="#{produto}"
-							target="#{produtoGridView.produtoSelecionado}" />
+							target="#{produtoBean.produto}" />
 					</p:commandLink>
 				</h:panelGrid>
 			</p:panel>
-
 		</p:dataGrid>
 
+					<!-- MODAL PRODUTO SELECIONADO -->
+		
 		<p:dialog header="Produto Info" widgetVar="produtoDialog" modal="true"
 			showEffect="fade" hideEffect="fade" resizable="false">
 			<p:outputPanel id="produtoDetail" style="text-align:center;">
 				<p:panelGrid columns="2"
-					rendered="#{not empty produtoGridView.produtoSelecionado}"
+					rendered="#{not empty produtoBean.produto}"
 					columnClasses="label,value">
 					<f:facet name="header">
 						<p:graphicImage
-							name="demo/images/car/#{produtoGridView.produtoSelecionado.brand}-big.gif" />
+							library="images" name="NA40.png" />
 					</f:facet>
 
 					<h:outputText value="Id:" />
-					<h:outputText value="#{produtoGridView.produtoSelecionado.id}" />
+					<h:outputText value="#{produtoBean.produto.id}" />
 
-					<h:outputText value="Year" />
-					<h:outputText value="#{produtoGridView.produtoSelecionado.year}" />
+					<h:outputText value="Nome: " />
+					<h:outputText value="#{produtoBean.produto.nome}" />
 
-					<h:outputText value="Color:" />
-					<h:outputText value="#{produtoGridView.produtoSelecionado.color}"
-						style="color:#{produtoGridView.produtoSelecionado.color}" />
+					<h:outputText value="Descrição:" />
+					<h:outputText value="#{produtoBean.produto.descricao}"/>
 
-					<h:outputText value="Price" />
-					<h:outputText value="$#{produtoGridView.produtoSelecionado.price}" />
+					<h:outputText value="Preço:" />
+					<h:outputText value="$#{produtoBean.produto.preco}" />
 				</p:panelGrid>
+				<br></br>
+				
+				<!-- BOTÃO 'COMPRAR' -->
+					<p:commandButton value="Comprar" id="comprar"  />
 			</p:outputPanel>
 		</p:dialog>
 	</h:form>
