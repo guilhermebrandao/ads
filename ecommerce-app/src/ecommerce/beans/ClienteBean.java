@@ -10,6 +10,7 @@ import javax.faces.context.FacesContext;
 import ecommerce.basicas.Cliente;
 import ecommerce.basicas.Endereco;
 import ecommerce.basicas.Pedido;
+import ecommerce.basicas.Produto;
 import ecommerce.fachada.Fachada;
 
 @ManagedBean
@@ -31,18 +32,22 @@ public class ClienteBean {
 		fachada = new Fachada();
 	}
 
-	public void cadastrarCliente(){
+
+	public void cadastrarCliente() throws Exception {
 		try {
+			cliente.setEndereco(endereco);
 			fachada.incluirCliente(cliente);
+			cliente = new Cliente();
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação: ", "Cadastro Realizado com Sucesso!"));
 		} catch (Exception e) {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informação: ", e.getMessage()));
 		}
-
+			
+		
 	}
-	
+
 	/* GETTERS AND SETTERS */
 
 	/**

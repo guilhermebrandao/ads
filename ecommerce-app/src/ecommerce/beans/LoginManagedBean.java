@@ -1,6 +1,8 @@
 package ecommerce.beans;
 
-	 import javax.faces.application.FacesMessage;
+	 import java.io.Serializable;
+
+import javax.faces.application.FacesMessage;
 	  import javax.faces.bean.ManagedBean;
 	  import javax.faces.bean.ViewScoped;
 	  import javax.faces.context.FacesContext;
@@ -11,8 +13,9 @@ import ecommerce.dados.generico.DAOFactory;
 	   
 	  @ManagedBean(name = "LoginMB")
 	  @ViewScoped
-	  public class LoginManagedBean {
+	  public class LoginManagedBean implements Serializable {
 	   
+		  	private static final long serialVersionUID = 1L;
 	        private DAOCliente usuarioDAO = DAOFactory.getDAOCliente();
 	        private Cliente cliente = new Cliente();
 	        
@@ -27,9 +30,10 @@ import ecommerce.dados.generico.DAOFactory;
 	                                           "Erro no Login!"));
 	                    return null;
 	              } else {
-	                    return "/cadastroProduto";
+	                    return "/index";
 	              }
 	              
+	         
 	              
 	        }
 	   

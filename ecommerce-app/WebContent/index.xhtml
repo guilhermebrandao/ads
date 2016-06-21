@@ -21,7 +21,7 @@
 		<b:navbarLinks>
 			<b:navLink value="Atendimento" href="#"></b:navLink>
 			<b:navLink value="Meus Pedidos" href="#"></b:navLink>
-			<b:navLink value="Login | Cadastrar" href="cadastroLogin.xhtml"></b:navLink>
+			<b:navLink value="Cadastrar" href="cadastroCliente.xhtml"></b:navLink>
 			<b:dropMenu value="Meu Perfil">
 				<b:navLink value="Configuração" href="#"></b:navLink>
 				<b:navLink value="Certificados" href="#"></b:navLink>
@@ -29,15 +29,18 @@
 
 			</b:dropMenu>
 		</b:navbarLinks>
+		
+		
 		<h:form styleClass="navbar-form navbar-right">
 			<div class="form-group">
-				<b:inputText placeholder="Email" fieldSize="sm" />
+				<p:outputLabel for="nomeUsuario" />
+				<p:inputText id="nomeUsuario" value="#{LoginMB.cliente.email}" placeholder="Email" fieldSize="sm" />
 			</div>
 			<div class="form-group">
-				<b:inputText placeholder="Password" fieldSize="sm" />
+				<p:outputLabel for="senha"/>
+				<p:password id="senha" value="#{LoginMB.cliente.senha}" placeholder="Password" fieldSize="sm" />
 			</div>
-			<b:commandButton action="a" value="Logar" look="success"
-				icon="chevron-right" iconAlign="right" />
+			<b:commandButton value="Enviar" icon="ui-icon-star" action="#{LoginMB.envia}" ajax="false" iconAlign="right" />
 		</h:form>
 	</b:navBar>
 

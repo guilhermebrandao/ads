@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Ecommerce do Poder</title>
+	<meta name="author"
+		content="Antonio Neto, Derick Irineu, Guilherme Brandão"></meta>
+</h:head>
+
+		<h:form id="formcadastro">
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="nome" value="Nome" />
+				<p:inputText id="nome"
+					value="#{clienteBean.cliente.nome}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="email" value="Email" />
+				<p:inputText id="email"
+					value="#{clienteBean.cliente.email}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="senha" value="Senha" />
+				<p:inputText id="senha" value="#{clienteBean.cliente.senha}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="cartaoDeCredito" value="Cartao de Credito" />
+				<p:inputText id="cartaoDeCredito" value="#{clienteBean.cliente.cartaoDeCredito}" />
+				</h:panelGrid>
+				<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="telefone" value="Telefone" />
+				<p:inputText id="telefone" value="#{clienteBean.cliente.telefone}" />
+			</h:panelGrid>
+				<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="tipoUsuario" value="Tipo de Usuario" />
+				<p:inputText id="tipoUsuario" value="#{clienteBean.cliente.tipoUsuario}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="cidade" value="Cidade" />
+				<p:inputText id="cidade" value="#{clienteBean.endereco.cidade}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="logradouro" value="Bairro" />
+				<p:inputText id="logradouro" value="#{clienteBean.endereco.logradouro}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="numero" value="Numero" />
+				<p:inputText id="numero" value="#{clienteBean.endereco.numero}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="uf" value="Uf" />
+				<p:inputText id="uf" value="#{clienteBean.endereco.uf}" />
+			</h:panelGrid>
+			<p:commandButton actionListener="#{clienteBean.cadastrarCliente}"
+				value="Cadastrar" />
+		</h:form>
+	
+	
+</html>

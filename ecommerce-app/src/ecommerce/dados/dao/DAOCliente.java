@@ -45,7 +45,8 @@ public class DAOCliente extends DAOUsuario<Cliente>implements IDAOCliente {
 
 	@Override
 	public boolean verificaLogin(String login) {
-		// TODO Auto-generated method stub
+
+		
 		return false;
 	}
 
