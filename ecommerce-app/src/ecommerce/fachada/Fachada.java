@@ -8,7 +8,7 @@ import ecommerce.basicas.Produto;
 import ecommerce.negocio.RNCliente;
 import ecommerce.negocio.RNProduto;
 
-public class Fachada {
+public class Fachada implements IFachada {
 
 	// ------------- Métodos do PRODUTO --------------
 
@@ -29,8 +29,9 @@ public class Fachada {
 
 	public void deletarProduto(Produto produto) {
 		RNProduto rn = new RNProduto();
-		rn.DeletarValido(produto);
+		rn.deletarValido(produto);
 	}
+
 	// ------------- Métodos do Cliente --------------
 
 	public void incluirCliente(Cliente cliente) {

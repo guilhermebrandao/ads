@@ -10,16 +10,18 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.component.datatable.DataTable;
 import org.primefaces.event.RowEditEvent;
 
 import ecommerce.basicas.Produto;
 import ecommerce.fachada.Fachada;
+import ecommerce.fachada.IFachada;
 
 @ManagedBean(name = "produtoBean")
 @ViewScoped
 public class ProdutoBean {
 
-	private Fachada fachada;
+	private IFachada fachada;
 	private Produto produto;
 	private List<Produto> produtos;
 
@@ -64,26 +66,28 @@ public class ProdutoBean {
 	}
 
 	public void onRowEdit(RowEditEvent event) {
-		// FacesMessage msg = new FacesMessage("Produto Editado", ((Produto)
-		// event.getObject()).getId().toString());
-
 		produto = ((Produto) event.getObject());
 		fachada.alterarProduto(produto);
 		FacesContext.getCurrentInstance().addMessage(null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação: ", "Alteração Realizada com Sucesso!"));
-		// FacesContext.getCurrentInstance().addMessage(null, msg);
+
 	}
 
 	public void onRowCancel(RowEditEvent event) {
-		FacesMessage msg = new FacesMessage("Edição Cancelada", ((Produto) event.getObject()).getId().toString());
+		FacesMessage msg = new FacesMessage("Edição Cancelada",
+				((Produto) event.getObject()).getNome() + " Não alterado");
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 
-	public void removerProdutos(Integer indice) {
-		produtos.remove(indice);
+	public void removerProduto(RowEditEvent event) {
+
+		produto = ((Produto) event.getObject());
+		fachada.deletarProduto(produto);
+		FacesMessage msg = new FacesMessage("Deletado", (produto.getNome() + " Deletado"));
+		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 
-	public Fachada getFachada() {
+	public IFachada getFachada() {
 		return fachada;
 	}
 

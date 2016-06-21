@@ -28,8 +28,7 @@ public class RNProduto implements IRNProduto {
 				dao.inserir(p);
 				System.out.println("Produto adicionado com sucesso!");
 			} catch (Exception e) {
-				System.out.println("Erro ao tentar adicionar produto"
-						+ e.getMessage());
+				System.out.println("Erro ao tentar adicionar produto" + e.getMessage());
 			}
 		}
 	}
@@ -40,24 +39,21 @@ public class RNProduto implements IRNProduto {
 				dao.alterar(p);
 				System.out.println("Produto alterado com sucesso!");
 			} catch (Exception e) {
-				System.out.println("Erro ao tentar alterar produto"
-						+ e.getMessage());
+				System.out.println("Erro ao tentar alterar produto " + e.getMessage());
 			}
 		}
 	}
-	
-	public void DeletarValido(Produto p) {
-		if (validaObjeto(p)) {
-			try {
-				dao.remover(p);
-				System.out.println("Produto alterado com sucesso!");
-			} catch (Exception e) {
-				System.out.println("Erro ao tentar alterar produto"
-						+ e.getMessage());
-			}
+
+	public void deletarValido(Produto p) {
+		try {
+			dao.remover(p);
+			System.out.println("Produto alterado com sucesso!");
+		} catch (Exception e) {
+			System.out.println("Erro ao tentar alterar produto " + e.getMessage());
 		}
+
 	}
-	
+
 	/***
 	 * Retorna verdadeiro se todos os campos obrigatórios estivirem preenchidos
 	 */
@@ -89,7 +85,7 @@ public class RNProduto implements IRNProduto {
 		}
 		return false;
 	}
-	
+
 	public List<Produto> listar() {
 		return DAOFactory.getDAOProduto().listarTodos();
 	}
