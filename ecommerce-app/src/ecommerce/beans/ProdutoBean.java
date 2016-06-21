@@ -7,13 +7,16 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.NoneScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+
+import org.primefaces.event.RowEditEvent;
 
 import ecommerce.basicas.Produto;
 import ecommerce.fachada.Fachada;
 
 @ManagedBean(name = "produtoBean")
-@SessionScoped
+@ViewScoped
 public class ProdutoBean {
 
 	private Fachada fachada;
@@ -58,6 +61,22 @@ public class ProdutoBean {
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Informação: ", e.getMessage()));
 		}
 
+	}
+
+	public void onRowEdit(RowEditEvent event) {
+		// FacesMessage msg = new FacesMessage("Produto Editado", ((Produto)
+		// event.getObject()).getId().toString());
+
+		produto = ((Produto) event.getObject());
+		fachada.alterarProduto(produto);
+		FacesContext.getCurrentInstance().addMessage(null,
+				new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação: ", "Alteração Realizada com Sucesso!"));
+		// FacesContext.getCurrentInstance().addMessage(null, msg);
+	}
+
+	public void onRowCancel(RowEditEvent event) {
+		FacesMessage msg = new FacesMessage("Edição Cancelada", ((Produto) event.getObject()).getId().toString());
+		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 
 	public Fachada getFachada() {
