@@ -12,10 +12,10 @@ import ecommerce.fachada.Fachada;
 public class TesteProduto {
 
 	public static void main(String[] args) {
-		testeSelect();
+		pesquisa();
 	}
-	
-	private static void testeSelect(){
+
+	private static void testeSelect() {
 		DAOCliente dao = DAOFactory.getDAOCliente();
 		dao.getCliente("neto", "neto");
 	}
@@ -23,26 +23,33 @@ public class TesteProduto {
 	private static void inserirColecaoPedido() {
 		Produto produto;
 		List<Produto> produtos = new ArrayList<Produto>();
-		
+
 		for (int i = 0; i < 10; i++) {
-			produto = new Produto("Produto Tal " + i, null, "Descricao Pa" + i, new BigDecimal(50.99), "985777593 " + i);
+			produto = new Produto("Produto Tal " + i, null, "Descricao Pa" + i, new BigDecimal(50.99),
+					"985777593 " + i);
 			produtos.add(produto);
 		}
-		
+
 		DAOFactory.getDAOProduto().inserirColecao(produtos);
 	}
-	
 
+	private static void listar() {
+		Fachada fachada = new Fachada();
+
+		for (Produto produto : fachada.listarProdutos()) {
+			System.out.println("\ncod barra : " + produto.getCodigoDeBarra() + "\nnome: " + produto.getNome()
+					+ "\ndescricao: " + produto.getDescricao() + "\npreco: " + produto.getPreco() + "\nid: "
+					+ produto.getId() + "\n");
+		}
+	}
 	
-	private static void listar(){
+	private static void pesquisa(){
 		Fachada fachada = new Fachada();
 		
-		for (Produto produto : fachada.listarProdutos()){
-			System.out.println("\ncod barra : " + produto.getCodigoDeBarra() +
-					"\nnome: " + produto.getNome() + 
-					"\ndescricao: " + produto.getDescricao() + 
-					"\npreco: " + produto.getPreco() + 
-					"\nid: " + produto.getId() + "\n");
+		for (Produto produto : DAOFactory.getDAOProduto().pesquisar("tal")) {
+			System.out.println("\ncod barra : " + produto.getCodigoDeBarra() + "\nnome: " + produto.getNome()
+					+ "\ndescricao: " + produto.getDescricao() + "\npreco: " + produto.getPreco() + "\nid: "
+					+ produto.getId() + "\n");
 		}
 	}
 }
