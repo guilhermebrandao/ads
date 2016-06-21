@@ -25,18 +25,45 @@
 		<p:column headerText="Id">
 			<h:outputText value="#{produto.id}" />
 		</p:column>
+		
 		<p:column headerText="Codigo de Barra">
-			<h:outputText value="#{produto.codigoDeBarra}" />
+		<p:cellEditor>
+		<f:facet name="output"><h:outputText value="#{produto.codigoDeBarra}" /></f:facet>
+	    <f:facet name="input"><p:inputText id="modelInput" value="#{produto.codigoDeBarra}" style="width:100%"/></f:facet>
+           </p:cellEditor>
 		</p:column>
 		<p:column headerText="Nome">
-			<h:outputText value="#{produto.nome}" />
+		<p:cellEditor>
+		<f:facet name="output"><h:outputText value="#{produto.nome}" /></f:facet>
+	    <f:facet name="input"><p:inputText id="modelInput" value="#{produto.nome}" style="width:100%"/></f:facet>
+           </p:cellEditor>
 		</p:column>
-		<p:column headerText="Descrição">
-			<h:outputText value="#{produto.descricao}" />
+		<p:column headerText="Descricao">
+		<p:cellEditor>
+		<f:facet name="output"><h:outputText value="#{produto.descricao}" /></f:facet>
+	    <f:facet name="input"><p:inputText id="modelInput" value="#{produto.descricao}" style="width:100%"/></f:facet>
+           </p:cellEditor>
 		</p:column>
 		<p:column headerText="Preço">
-			<h:outputText value="#{produto.preco}" />
+		<p:cellEditor>
+		<f:facet name="output"><h:outputText value="#{produto.preco}" /></f:facet>
+	    <f:facet name="input"><p:inputText id="modelInput" value="#{produto.preco}" style="width:100%"/></f:facet>
+           </p:cellEditor>
 		</p:column>
+		 <p:column style="width:32px">
+           <p:rowEditor />
+       </p:column>
+  
+ 
+   <p:contextMenu for="tabelaprodutos" widgetVar="cMenu">   
+       <p:menuitem value="Edit Cell" icon="ui-icon-search" onclick="PF('dialogCadastro').showCellEditor();return false;"/>  
+       <p:menuitem value="Hide Menu" icon="ui-icon-close" onclick="PF('cMenu').hide()"/>  
+   </p:contextMenu>
+       <p:ajax event="rowEdit" listener="#{ProdutoBean.onRowEdit}" update=":form:msgs" />
+       <p:ajax event="rowEditCancel" listener="#{ProdutoBean.onRowCancel}" update=":form:msgs" />
+       
+		
+		
 		<!--  <p:column headerText="Ações">
 						<p:commandLink title="Alterar" update="editproduto"
 							oncomplete="PF('dialogEdicao').show();" immediate="true">

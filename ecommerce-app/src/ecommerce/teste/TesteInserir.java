@@ -44,9 +44,9 @@ public class TesteInserir {
 
 		Cliente cliente = new Cliente();
 
-		cliente.setSenha("senha");
-		cliente.setNome("nome");
-		cliente.setEmail("1email@email.com");
+		cliente.setSenha("neto");
+		cliente.setNome("neto");
+		cliente.setEmail("neto");
 		cliente.setTelefone("telefone");
 		cliente.setTipoUsuario("2");
 
@@ -94,6 +94,6 @@ public class TesteInserir {
 	}
 
 	public static void main(String[] args) {
-		inserirColecaoCliente();
+		inserirCliente();
 	}
 }

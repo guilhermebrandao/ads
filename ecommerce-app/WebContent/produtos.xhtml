@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Ecommerce do Poder</title>
+	<meta name="author"
+		content="Antônio Neto, Derick Irineu, Guilherme Brandão"></meta>
+</h:head>
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+	<b:navBar brand="Ecommerce" href="index.xhtml" inverse="true"
+		fixed="top" />
+	<b:navbarLinks>
+		<b:navLink value="Cadastro de Produtos" href="#"></b:navLink>
+		<b:navLink value="Cadastro de Novos Usuarios" href="#"></b:navLink>
+		<b:navLink value="Login | Cadastrar" href="cadastroLogin.xhtml"></b:navLink>
+	</b:navbarLinks>
+	<br> 
+	</br>
+<h:form id="form">
+   <p:growl id="msgs" showDetail="true"/>
+   <p:dataTable id="tabelaprodutos" var="produto" value="#{produtoBean.produtos}" editable="true" style="margin-bottom:20px">
+       <f:facet name="header">
+       </f:facet>
+ 
+       <p:ajax event="rowEdit" listener="#{produtoBean.onRowEdit}" update=":form:msgs" />
+       <p:ajax event="rowEditCancel" listener="#{produtoBean.onRowCancel}" update=":form:msgs" />
+ 
+       <p:column headerText="Id">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{produto.id}" /></f:facet>
+               <f:facet name="input"><p:inputText id="modelInput" value="#{produto.id}" style="width:100%"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+ 
+       <p:column headerText="CodigoBarra">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{produto.codigoDeBarra}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{produto.codigoDeBarra}" style="width:100%" label="Year"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+ 
+       <p:column headerText="Nome">
+           <p:cellEditor>
+              <f:facet name="output"><h:outputText value="#{produto.nome}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{produto.nome}" style="width:100%" label="Year"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+ 
+       <p:column headerText="preco">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{produto.preco}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{produto.preco}" style="width:100%" label="Year"/></f:facet>
+           
+           </p:cellEditor>
+       </p:column>
+ 
+       <p:column style="width:32px">
+           <p:rowEditor />
+       </p:column>
+   </p:dataTable>
+ 
+
+   </h:form>
+</h:body>
+</html>

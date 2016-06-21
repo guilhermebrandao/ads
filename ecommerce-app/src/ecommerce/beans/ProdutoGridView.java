@@ -6,11 +6,14 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.application.FacesMessage;
+import org.primefaces.event.RowEditEvent;
+import javax.faces.context.FacesContext;
 
 import ecommerce.basicas.Produto;
 import ecommerce.fachada.Fachada;
 
-@ManagedBean
+@ManagedBean(name="dtEditView")
 @ViewScoped
 public class ProdutoGridView implements Serializable {
 
@@ -62,5 +65,7 @@ public class ProdutoGridView implements Serializable {
 	public void setProdutoBean(ProdutoBean produtoBean) {
 		this.produtoBean = produtoBean;
 	}
+	
+	 
 }
 
