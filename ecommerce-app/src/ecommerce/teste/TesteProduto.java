@@ -5,13 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ecommerce.basicas.Produto;
+import ecommerce.dados.dao.DAOCliente;
 import ecommerce.dados.generico.DAOFactory;
 import ecommerce.fachada.Fachada;
 
 public class TesteProduto {
 
 	public static void main(String[] args) {
-		inserirColecaoPedido();
+		testeSelect();
+	}
+	
+	private static void testeSelect(){
+		DAOCliente dao = DAOFactory.getDAOCliente();
+		dao.getCliente("neto", "neto");
 	}
 
 	private static void inserirColecaoPedido() {
@@ -25,6 +31,8 @@ public class TesteProduto {
 		
 		DAOFactory.getDAOProduto().inserirColecao(produtos);
 	}
+	
+
 	
 	private static void listar(){
 		Fachada fachada = new Fachada();
