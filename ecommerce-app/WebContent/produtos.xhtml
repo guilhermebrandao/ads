@@ -14,56 +14,86 @@
 	<b:navBar brand="Ecommerce" href="index.xhtml" inverse="true"
 		fixed="top" />
 	<b:navbarLinks>
-		<b:navLink value="Cadastro de Produtos" href="#"></b:navLink>
-		<b:navLink value="Cadastro de Novos Usuarios" href="#"></b:navLink>
-		<b:navLink value="Login | Cadastrar" href="cadastroLogin.xhtml"></b:navLink>
 	</b:navbarLinks>
-	<br> 
-	</br>
-<h:form id="form">
-   <p:growl id="msgs" showDetail="true"/>
-   <p:dataTable id="tabelaprodutos" var="produto" value="#{produtoBean.produtos}" editable="true" style="margin-bottom:20px">
-       <f:facet name="header">
-       </f:facet>
- 
-       <p:ajax event="rowEdit" listener="#{produtoBean.onRowEdit}" update=":form:msgs" />
-       <p:ajax event="rowEditCancel" listener="#{produtoBean.onRowCancel}" update=":form:msgs" />
- 
-       <p:column headerText="Id">
-           <p:cellEditor>
-               <f:facet name="output"><h:outputText value="#{produto.id}" /></f:facet>
-               <f:facet name="input"><p:inputText id="modelInput" value="#{produto.id}" style="width:100%"/></f:facet>
-           </p:cellEditor>
-       </p:column>
- 
-       <p:column headerText="CodigoBarra">
-           <p:cellEditor>
-               <f:facet name="output"><h:outputText value="#{produto.codigoDeBarra}" /></f:facet>
-               <f:facet name="input"><p:inputText value="#{produto.codigoDeBarra}" style="width:100%" label="Year"/></f:facet>
-           </p:cellEditor>
-       </p:column>
- 
-       <p:column headerText="Nome">
-           <p:cellEditor>
-              <f:facet name="output"><h:outputText value="#{produto.nome}" /></f:facet>
-               <f:facet name="input"><p:inputText value="#{produto.nome}" style="width:100%" label="Year"/></f:facet>
-           </p:cellEditor>
-       </p:column>
- 
-       <p:column headerText="preco">
-           <p:cellEditor>
-               <f:facet name="output"><h:outputText value="#{produto.preco}" /></f:facet>
-               <f:facet name="input"><p:inputText value="#{produto.preco}" style="width:100%" label="Year"/></f:facet>
-           
-           </p:cellEditor>
-       </p:column>
- 
-       <p:column style="width:32px">
-           <p:rowEditor />
-       </p:column>
-   </p:dataTable>
- 
 
-   </h:form>
+
+
 </h:body>
+
+<h:form id="form">
+	<p:growl id="msgs" showDetail="true" />
+	<p:dataTable id="tabelaprodutos" var="produto"
+		value="#{produtoBean.produtos}" editable="true"
+		style="margin-bottom:20px">
+		<f:facet name="header">
+		</f:facet>
+
+		<p:ajax event="rowEdit" listener="#{produtoBean.onRowEdit}"
+			update=":form:msgs" />
+		<p:ajax event="rowEditCancel" listener="#{produtoBean.onRowCancel}"
+			update=":form:msgs" />
+
+		<p:column headerText="Id">
+			<p:cellEditor>
+				<f:facet name="output">
+					<h:outputText value="#{produto.id}" />
+				</f:facet>
+				<f:facet name="input">
+					<p:inputText id="modelInput" value="#{produto.id}"
+						style="width:100%" />
+				</f:facet>
+			</p:cellEditor>
+		</p:column>
+
+		<p:column headerText="CodigoBarra">
+			<p:cellEditor>
+				<f:facet name="output">
+					<h:outputText value="#{produto.codigoDeBarra}" />
+				</f:facet>
+				<f:facet name="input">
+					<p:inputText value="#{produto.codigoDeBarra}" style="width:100%"
+						label="Year" />
+				</f:facet>
+			</p:cellEditor>
+		</p:column>
+
+		<p:column headerText="Nome">
+			<p:cellEditor>
+				<f:facet name="output">
+					<h:outputText value="#{produto.nome}" />
+				</f:facet>
+				<f:facet name="input">
+					<p:inputText value="#{produto.nome}" style="width:100%"
+						label="Year" />
+				</f:facet>
+			</p:cellEditor>
+		</p:column>
+
+		<p:column headerText="preco">
+			<p:cellEditor>
+				<f:facet name="output">
+					<h:outputText value="#{produto.preco}" />
+				</f:facet>
+				<f:facet name="input">
+					<p:inputText value="#{produto.preco}" style="width:100%"
+						label="Year" />
+				</f:facet>
+
+			</p:cellEditor>
+		</p:column>
+
+		<p:column style="width:32px">
+			<p:rowEditor />
+		</p:column>
+		<p:column headerText="Apagar Item"
+			style="text-align: center; width: 100px">
+			<h:commandButton value="Delete"
+				action="#{produtoBean.removerProdutos(id)}"
+				oncomplete="#{produtoBean.produtos}" />
+		</p:column>
+	</p:dataTable>
+
+
+</h:form>
+
 </html>

@@ -79,6 +79,10 @@ public class ProdutoBean {
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 
+	public void removerProdutos(Integer indice) {
+		produtos.remove(indice);
+	}
+
 	public Fachada getFachada() {
 		return fachada;
 	}

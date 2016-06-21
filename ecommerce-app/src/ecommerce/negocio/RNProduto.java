@@ -46,6 +46,18 @@ public class RNProduto implements IRNProduto {
 		}
 	}
 	
+	public void DeletarValido(Produto p) {
+		if (validaObjeto(p)) {
+			try {
+				dao.remover(p);
+				System.out.println("Produto alterado com sucesso!");
+			} catch (Exception e) {
+				System.out.println("Erro ao tentar alterar produto"
+						+ e.getMessage());
+			}
+		}
+	}
+	
 	/***
 	 * Retorna verdadeiro se todos os campos obrigatórios estivirem preenchidos
 	 */
